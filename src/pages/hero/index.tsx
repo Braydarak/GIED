@@ -1,6 +1,13 @@
 import bg from '../../assets/images/bg-image.png';
 
 const HeroSection = () => {
+  const scrollToSection = () => {
+    const section = document.getElementById('upcoming-events');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section
       className="relative bg-black text-white py-20 flex flex-col items-center pt-32 h-screen justify-center bg-cover bg-center"
@@ -24,8 +31,11 @@ const HeroSection = () => {
         </p>
 
         {/* Botón CTA */}
-        <button className="bg-principal text-white text-lg py-3 px-10 rounded-lg hover:bg-turquesa80 transition-all ease-in-out duration-300 sm:py-2 sm:px-6">
-          Ver Eventos
+        <button
+          onClick={scrollToSection}
+          className="bg-principal text-white text-lg py-3 px-10 rounded-lg hover:bg-turquesa80 transition-all ease-in-out duration-300 sm:py-2 sm:px-6"
+        >
+          Ver Próximos Eventos
         </button>
       </div>
     </section>

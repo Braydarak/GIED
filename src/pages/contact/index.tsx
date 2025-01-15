@@ -19,7 +19,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="bg-turquesa10 text-black py-16 px-8">
+    <section className="bg-white text-black py-16 px-8">
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="text-3xl font-montserrat font-bold mb-8">Contáctanos</h2>
         <p className="text-lg mb-8">¿Tienes alguna duda o pregunta? Déjanos un mensaje y nos pondremos en contacto contigo.</p>

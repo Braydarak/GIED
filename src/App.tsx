@@ -3,6 +3,7 @@ import HeroSection from './pages/hero';
 import PastEventsPage from './pages/pastEvents';
 import ContactSection from './pages/contact';
 import Footer from './components/footer';
+import UpcomingEvents from './pages/upcomingEvents';
 
 
 function App() {
@@ -14,6 +15,8 @@ function App() {
       
       {/* Página de Eventos Pasados */}
       <PastEventsPage /> {/* Renderiza directamente la página de eventos pasados */}
+
+      <UpcomingEvents /> {/* Renderiza la sección de próximos eventos */}
       
       {/* Sección de Contacto */}
       <ContactSection /> {/* Renderizamos la sección de contacto */}
