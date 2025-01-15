@@ -47,7 +47,13 @@ const Header = () => {
           <InstagramLogo
             width="30"
             height="30"
-            fill={isHovered ? '#00a59e' : '#ffffff'} 
+            fill={
+              isHovered
+                ? '#00a59e'
+                : scrolled
+                ? '#000000' 
+                : '#ffffff'
+            }
           />
         </a>
 
