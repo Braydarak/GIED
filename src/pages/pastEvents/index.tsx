@@ -30,7 +30,7 @@ const PastEventsPage = () => {
       <h1 className="text-4xl text-center font-panton text-principal font-bold mb-12">Eventos Pasados</h1>
       
       {/* Lista de eventos pasados */}
-      <div className="max-w-4xl mx-auto space-y-12">
+      <div className="max-w-4xl mx-auto space-y-12 md:pl-0  pl-[10px] md:pr-0 pr-[10px]">
         {pastEvents.map((event) => (
           <div key={event.id} className="bg-principal rounded-lg shadow-lg p-6 flex flex-col sm:flex-row items-center space-y-6 sm:space-y-0 sm:space-x-6">
             <img src={event.imageUrl} alt={event.title} className="h-48 w-48 object-cover rounded-lg" />
