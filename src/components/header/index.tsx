@@ -6,6 +6,21 @@ import cataluña from '../../assets/images/flags/españa.webp';
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 768);
+  };
+
+  useEffect(() => {
+    // Escuchar cambios en el tamaño de la pantalla
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      // Limpiar el evento en el desmontaje
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const handleScroll = () => {
     setScrolled(window.scrollY > 50);
@@ -20,7 +35,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 z-50 left-0 w-full flex justify-between items-center p-4 pl-16 pr-16 transition-all duration-300 ${
+      className={`fixed top-0 z-50 left-0 w-full flex justify-between items-center p-4 pl-4 pr-4 md:pl-16 md:pr-16 transition-all duration-300 ${
         scrolled ? 'bg-turquesa25' : 'bg-transparent'
       }`}
     >
@@ -28,7 +43,7 @@ const Header = () => {
       <img
         src={logo}
         alt="GIED Logo"
-        className="h-24 transition-all duration-300"
+        className="h-12 md:h-24 transition-all duration-300"
       />
 
       {/* Logos a la derecha */}
@@ -45,8 +60,8 @@ const Header = () => {
           }}
         >
           <InstagramLogo
-            width="30"
-            height="30"
+            width={isMobile ? '25' : '30'}
+            height={isMobile ? '25' : '30'}
             fill={
               isHovered
                 ? '#00a59e'
