@@ -4,23 +4,23 @@ const pastEvents = [
   {
     id: 1,
     title: 'Torneo de Fútbol 7',
-    date: '2024-11-15',
+    date: '15-11-2024',
     description: 'Un torneo amistoso de fútbol 7 con equipos locales. ¡Fue un gran evento!',
-    imageUrl: '/path-to-image1.jpg',
+    imageUrl: 'https://weezevent.com/wp-content/uploads/2023/02/01124436/organiser-tournoi-foot.jpg',
   },
   {
     id: 2,
     title: 'Maratón de la Ciudad',
-    date: '2024-10-30',
+    date: '30-10-2024',
     description: 'Una maratón de 42 km con corredores internacionales y locales.',
-    imageUrl: '/path-to-image2.jpg',
+    imageUrl: 'https://estaticos-cdn.prensaiberica.es/clip/a5639c4d-84cb-4df1-8628-a3abfd142936_16-9-discover-aspect-ratio_default_0.jpg',
   },
   {
     id: 3,
     title: 'Partido de Rugby - Final',
-    date: '2024-09-22',
+    date: '22-09-2024',
     description: 'La final del campeonato de rugby con los dos equipos más competitivos de la temporada.',
-    imageUrl: '/path-to-image3.jpg',
+    imageUrl: 'https://estaticos-cdn.prensaiberica.es/clip/bdfdee6e-d17b-4865-948a-3f86513f9762_source-aspect-ratio_default_0.jpg',
   },
 ];
 

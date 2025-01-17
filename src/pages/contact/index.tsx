@@ -1,32 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Aquí podrías integrar un servicio de envío de formularios como Formspree o algo similar
-    console.log('Formulario enviado:', formData);
+    console.log("Formulario enviado:", formData);
   };
 
   return (
     <section className="bg-white text-black py-16 px-8">
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="text-3xl font-montserrat font-bold mb-8">Contáctanos</h2>
-        <p className="text-lg mb-8">¿Tienes alguna duda o pregunta? Déjanos un mensaje y nos pondremos en contacto contigo.</p>
-        
+        <p className="text-lg mb-8">
+          ¿Tienes alguna duda o pregunta?{" "}
+          <p>Déjanos un mensaje y nos pondremos en contacto contigo.</p>
+        </p>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="name" className="block text-lg font-medium">Nombre</label>
+            <label htmlFor="name" className="block text-lg font-medium">
+              Nombre
+            </label>
             <input
               type="text"
               id="name"
@@ -39,7 +44,9 @@ const ContactSection = () => {
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-lg font-medium">Correo electrónico</label>
+            <label htmlFor="email" className="block text-lg font-medium">
+              Correo electrónico
+            </label>
             <input
               type="email"
               id="email"
@@ -52,7 +59,9 @@ const ContactSection = () => {
           </div>
 
           <div>
-            <label htmlFor="message" className="block text-lg font-medium">Mensaje</label>
+            <label htmlFor="message" className="block text-lg font-medium">
+              Mensaje
+            </label>
             <textarea
               id="message"
               name="message"
@@ -64,7 +73,10 @@ const ContactSection = () => {
             ></textarea>
           </div>
 
-          <button type="submit" className="bg-principal text-white py-3 px-8 rounded-md font-semibold hover:bg-turquesa65 transition duration-300">
+          <button
+            type="submit"
+            className="bg-principal text-white py-3 px-8 rounded-md font-semibold hover:bg-turquesa65 transition duration-300"
+          >
             Enviar mensaje
           </button>
         </form>

@@ -4,26 +4,26 @@ const UpcomingEvents = () => {
       id: 1,
       title: "Carrera de montaña 2025",
       date: "20 de Febrero, 2025",
-      location: "San Carlos, Argentina",
+      location: "Soller, Mallorca",
       description:
         "Una experiencia única para los amantes del deporte al aire libre.",
-      image: "https://via.placeholder.com/400x250", // Reemplazar con URL de la imagen real
+      image: "https://lacasadeltrailrunning.com/wp-content/uploads/2019/12/trail-running-cosa-mi-serve.jpg", // Reemplazar con URL de la imagen real
     },
     {
       id: 2,
       title: "Triatlón Costero",
       date: "15 de Marzo, 2025",
-      location: "Villa Gesell, Argentina",
+      location: "Palma, Mallorca",
       description: "Nadar, correr y pedalear junto al mar.",
-      image: "https://via.placeholder.com/400x250",
+      image: "https://triatletasenred.sport.es/wp-content/uploads/100x100-Half-2019.jpg",
     },
     {
       id: 3,
       title: "Torneo de Fútbol Infantil",
       date: "10 de Abril, 2025",
-      location: "Buenos Aires, Argentina",
+      location: "Son Servera, Mallorca",
       description: "Un evento deportivo para disfrutar en familia.",
-      image: "https://via.placeholder.com/400x250",
+      image: "https://ytg-prod.imgix.net/img/news/q7EUifaAK0DQ3skzemDqjs2cE70aWy27WBtjcTtS.jpg",
     },
   ];
 
@@ -60,7 +60,7 @@ const UpcomingEvents = () => {
                 <p className="text-gray-600 mb-4 font-montserrat min-h-3">
                   {event.description}
                 </p>
-                <button className="bg-principal text-white py-2 px-4 rounded-lg hover:bg-turquesa80 transition-all duration-300">
+                <button className="bg-principal text-white py-2 px-4 md:w-auto w-full rounded-lg hover:bg-turquesa80 transition-all duration-300">
                   Más información
                 </button>
               </div>
