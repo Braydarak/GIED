@@ -1,31 +1,8 @@
+import { useNavigate } from "react-router-dom";
+import upcoming_events from "../../data/upcoming_events.json";
+
 const UpcomingEvents = () => {
-  const events = [
-    {
-      id: 1,
-      title: "Carrera de montaña 2025",
-      date: "20 de Febrero, 2025",
-      location: "Soller, Mallorca",
-      description:
-        "Una experiencia única para los amantes del deporte al aire libre.",
-      image: "https://lacasadeltrailrunning.com/wp-content/uploads/2019/12/trail-running-cosa-mi-serve.jpg", // Reemplazar con URL de la imagen real
-    },
-    {
-      id: 2,
-      title: "Triatlón Costero",
-      date: "15 de Marzo, 2025",
-      location: "Palma, Mallorca",
-      description: "Nadar, correr y pedalear junto al mar.",
-      image: "https://triatletasenred.sport.es/wp-content/uploads/100x100-Half-2019.jpg",
-    },
-    {
-      id: 3,
-      title: "Torneo de Fútbol Infantil",
-      date: "10 de Abril, 2025",
-      location: "Son Servera, Mallorca",
-      description: "Un evento deportivo para disfrutar en familia.",
-      image: "https://ytg-prod.imgix.net/img/news/q7EUifaAK0DQ3skzemDqjs2cE70aWy27WBtjcTtS.jpg",
-    },
-  ];
+  const navigate = useNavigate();
 
   return (
     <section className="bg-turquesa10 py-20 scroll-mt-24" id="upcoming-events">
@@ -37,7 +14,7 @@ const UpcomingEvents = () => {
 
         {/* Listado de eventos */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {events.map((event) => (
+          {upcoming_events.upcoming_events.map((event) => (
             <div
               key={event.id}
               className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
@@ -60,7 +37,10 @@ const UpcomingEvents = () => {
                 <p className="text-gray-600 mb-4 font-montserrat min-h-3">
                   {event.description}
                 </p>
-                <button className="bg-principal text-white py-2 px-4 md:w-auto w-full rounded-lg hover:bg-turquesa80 transition-all duration-300">
+                <button
+                  onClick={() => navigate(`/event-details/${event.id}`)}
+                  className="bg-principal text-white py-2 px-4 md:w-auto w-full rounded-lg hover:bg-turquesa80 transition-all duration-300"
+                >
                   Más información
                 </button>
               </div>
