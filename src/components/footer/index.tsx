@@ -1,13 +1,18 @@
 const Footer = () => {
   return (
-    <footer className="bg-turquesa10 text-black pt-2 pb-2">
-          <div className="flex justify-between pl-4 items-center pr-4">
-          <span className="text-sm font-montserrat font-semibold">
-          Web disgned by Brian Darakdjian
-        </span>
-        <span className="text-sm font-montserrat font-semibold">
-          © 2025 GIED - Todos los derechos reservados
-        </span>
+    <footer className="bg-turquesa10 text-black py-4">
+      <div className="container mx-auto ">
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          {/* Texto de diseño */}
+          <span className="text-xs md:text-sm font-montserrat font-semibold mb-2 md:mb-0">
+            Web designed by Brian Darakdjian
+          </span>
+
+          {/* Derechos reservados */}
+          <span className="text-xs md:text-sm font-montserrat font-semibold">
+            © 2025 GIED - Todos los derechos reservados
+          </span>
+        </div>
       </div>
     </footer>
   );

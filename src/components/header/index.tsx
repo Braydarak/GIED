@@ -2,8 +2,10 @@ import { useState, useEffect } from 'react';
 import logo from '../../assets/images/LOGOTIPO GIED VERSION 2.png';
 import InstagramLogo from '../instagramLogo';
 import cataluña from '../../assets/images/flags/españa.webp';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
+  const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -11,6 +13,17 @@ const Header = () => {
   const handleResize = () => {
     setIsMobile(window.innerWidth <= 768);
   };
+
+  const isEventDetailsPage = /^\/event-details\/\d+$/.test(location.pathname);
+
+  const instagramFill =
+  isHovered
+    ? '#00a59e' // Turquesa si está en hover
+    : isEventDetailsPage
+    ? '#000000' // Negro si está en /events-details
+    : scrolled
+    ? '#000000' // Negro si se hizo scroll
+    : '#ffffff'; // Blanco por defecto
 
   useEffect(() => {
     // Escuchar cambios en el tamaño de la pantalla
@@ -40,11 +53,13 @@ const Header = () => {
       }`}
     >
       {/* Logo de GIED */}
-      <img
-        src={logo}
-        alt="GIED Logo"
-        className="h-12 md:h-24 transition-all duration-300"
-      />
+      <Link to="/" className="cursor-pointer">
+        <img
+          src={logo}
+          alt="GIED Logo"
+          className="h-12 md:h-24 transition-all duration-300"
+        />
+      </Link>
 
       {/* Logos a la derecha */}
       <div className="flex items-center space-x-8">
@@ -62,13 +77,7 @@ const Header = () => {
           <InstagramLogo
             width={isMobile ? '25' : '30'}
             height={isMobile ? '25' : '30'}
-            fill={
-              isHovered
-                ? '#00a59e'
-                : scrolled
-                ? '#000000' 
-                : '#ffffff'
-            }
+            fill={instagramFill}
           />
         </a>
 
