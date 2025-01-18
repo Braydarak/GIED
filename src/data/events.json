@@ -1,0 +1,52 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "Carrera de montaña 2025",
+      "date": "20-02-2025",
+      "location": "Soller, Mallorca",
+      "description": "Una experiencia única para los amantes del deporte al aire libre.",
+      "image": "https://lacasadeltrailrunning.com/wp-content/uploads/2019/12/trail-running-cosa-mi-serve.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Triatlón Costero",
+      "date": "15-03-2025",
+      "location": "Palma, Mallorca",
+      "description": "Nadar, correr y pedalear junto al mar.",
+      "image": "https://triatletasenred.sport.es/wp-content/uploads/100x100-Half-2019.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Torneo de Fútbol Infantil",
+      "date": "10-04-2025",
+      "location": "Son Servera, Mallorca",
+      "description": "Un evento deportivo para disfrutar en familia.",
+      "image": "https://ytg-prod.imgix.net/img/news/q7EUifaAK0DQ3skzemDqjs2cE70aWy27WBtjcTtS.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Torneo de Fútbol 7",
+      "date": "15-11-2024",
+      "location": "Son Servera, Mallorca",
+      "description": "Un torneo amistoso de fútbol 7 con equipos locales. ¡Fue un gran evento!",
+      "image": "https://weezevent.com/wp-content/uploads/2023/02/01124436/organiser-tournoi-foot.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Maratón de la Ciudad",
+      "date": "30-10-2024",
+      "location": "Son Servera, Mallorca",
+      "description": "Una maratón de 42 km con corredores internacionales y locales.",
+      "image": "https://estaticos-cdn.prensaiberica.es/clip/a5639c4d-84cb-4df1-8628-a3abfd142936_16-9-discover-aspect-ratio_default_0.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Partido de Rugby - Final",
+      "date": "22-09-2024",
+      "location": "Son Servera, Mallorca",
+      "description": "La final del campeonato de rugby con los dos equipos más competitivos de la temporada.",
+      "image": "https://estaticos-cdn.prensaiberica.es/clip/bdfdee6e-d17b-4865-948a-3f86513f9762_source-aspect-ratio_default_0.jpg"
+    }
+  ]
+}

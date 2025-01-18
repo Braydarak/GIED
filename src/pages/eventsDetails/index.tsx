@@ -1,15 +1,37 @@
-import { useParams } from 'react-router-dom';
-import { useState } from 'react';
-import upcoming_events from '../../data/upcoming_events.json';
+import { useParams } from "react-router-dom";
+import { useState } from "react";
+import upcoming_events from "../../data/events.json";
+
+
+// Función para formatear las fechas a 'dd de MMMM, yyyy'
+const formatDate = (dateString: string): string => {
+  const dateParts = dateString.split("-"); // Descomponer la fecha (dd-mm-yyyy)
+  const eventDate = new Date(
+    `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`
+  ); // Crear un objeto Date con formato yyyy-mm-dd
+
+  // Array de nombres de meses
+  const months = [
+    "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+    "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+  ];
+
+  const day = eventDate.getDate();
+  const month = months[eventDate.getMonth()];
+  const year = eventDate.getFullYear();
+
+  // Retornar la fecha en formato 'dd de MMMM, yyyy'
+  return `${day} de ${month}, ${year}`;
+};
 
 const EventsDetails = () => {
   const { id } = useParams<{ id: string }>(); // Obtén el ID del evento desde la URL
-  const event = upcoming_events.upcoming_events.find((e) => e.id === Number(id)); // Busca el evento correspondiente
+  const event = upcoming_events.events.find((e) => e.id === Number(id)); // Busca el evento correspondiente
 
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
+    name: "",
+    email: "",
+    phone: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -20,7 +42,7 @@ const EventsDetails = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     alert(`¡Gracias por inscribirte, ${formData.name}!`);
-    setFormData({ name: '', email: '', phone: '' });
+    setFormData({ name: "", email: "", phone: "" });
   };
 
   if (!event) {
@@ -30,7 +52,7 @@ const EventsDetails = () => {
       </div>
     );
   }
-    
+
   return (
     <section className="bg-turquesa10 pt-32 text-black min-h-screen py-16 px-8 md:px-16">
       {/* Encabezado */}
@@ -48,7 +70,8 @@ const EventsDetails = () => {
         <h2 className="text-2xl text-turquesa80 font-semibold mb-4 font-panton">
           Detalles del Evento
         </h2>
-        <p className="mb-4 text-turquesa65">{event.date}</p>
+        {/* Usamos formatDate para mostrar la fecha formateada */}
+        <p className="mb-4 text-turquesa65">{formatDate(event.date)}</p>
         <p className="mb-4 text-turquesa80">{event.location}</p>
         <img src={event.image} alt={event.title} className="w-full rounded-lg mb-4" />
       </div>
