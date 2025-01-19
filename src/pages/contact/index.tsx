@@ -22,8 +22,8 @@ const ContactSection = () => {
   return (
     <section className="bg-white text-black py-16 px-8">
       <div className="max-w-3xl mx-auto text-center">
-        <h2 className="text-3xl font-montserrat font-bold mb-8">Contáctanos</h2>
-        <p className="text-lg mb-8">
+        <h2 className="text-3xl font-panton text-principal font-bold mb-8">Contáctanos</h2>
+        <p className="text-lg mb-8 font-montserrat">
           ¿Tienes alguna duda o pregunta?{" "}
           <p>Déjanos un mensaje y nos pondremos en contacto contigo.</p>
         </p>
