@@ -1,54 +1,14 @@
 import { motion } from "framer-motion";
 import past_events from "../../data/events.json";
-
-interface Event {
-  id: number;
-  title: string;
-  date: string;
-  location: string;
-  description: string;
-  image: string;
-}
-
-// Función para formatear las fechas a 'dd de MMMM, yyyy'
-const formatDate = (dateString: string): string => {
-  const dateParts = dateString.split("-");
-  const eventDate = new Date(
-    `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`
-  );
-
-  const months = [
-    "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-    "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
-  ];
-
-  const day = eventDate.getDate();
-  const month = months[eventDate.getMonth()];
-  const year = eventDate.getFullYear();
-
-  return `${day} de ${month}, ${year}`;
-};
+import { filterPastEvents, formatDate } from "../../utils/functions";
 
 const PastEventsPage = () => {
-  const currentDate = new Date();
-
-  // Función para filtrar eventos pasados
-  const filterPastEvents = (events: Event[]) => {
-    return events.filter((event) => {
-      const eventDateParts = event.date.split("-");
-      const eventDate = new Date(
-        `${eventDateParts[2]}-${eventDateParts[1]}-${eventDateParts[0]}`
-      );
-      return eventDate < currentDate;
-    });
-  };
-
   const pastEvents = filterPastEvents(past_events.events);
 
   const isMobile = window.innerWidth < 768;
 
   return (
-    <div className="bg-turquesa10 text-white min-h-screen pt-20 pb-20 overflow-x-hidden">
+    <section className="bg-turquesa10 text-white min-h-screen pt-20 pb-20 overflow-x-hidden">
       <h1 className="text-4xl text-center font-panton text-principal font-bold mb-12">
         Eventos Pasados
       </h1>
@@ -65,7 +25,7 @@ const PastEventsPage = () => {
                 x: isMobile
                   ? index % 2 === 0
                     ? -100
-                    : 100 
+                    : 100
                   : index % 2 === 0
                   ? -600
                   : 600,
@@ -96,10 +56,12 @@ const PastEventsPage = () => {
             </motion.div>
           ))
         ) : (
-          <p className="text-center text-lg text-white">No hay eventos pasados.</p>
+          <p className="text-center text-lg text-white">
+            No hay eventos pasados.
+          </p>
         )}
       </div>
-    </div>
+    </section>
   );
 };
 
