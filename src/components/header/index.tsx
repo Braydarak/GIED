@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
-import logo from '../../assets/images/LOGOTIPO GIED VERSION 2.png';
+import logo from '../../assets/images/LOGOTIPO GIED VERSION 2.webp';
 import InstagramLogo from '../instagramLogo';
-import cataluña from '../../assets/images/flags/españa.webp';
 import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
@@ -18,19 +17,17 @@ const Header = () => {
 
   const instagramFill =
   isHovered
-    ? '#00a59e' // Turquesa si está en hover
+    ? '#00a59e'
     : isEventDetailsPage
-    ? '#000000' // Negro si está en /events-details
+    ? '#000000' 
     : scrolled
-    ? '#000000' // Negro si se hizo scroll
-    : '#ffffff'; // Blanco por defecto
+    ? '#000000' 
+    : '#ffffff'; 
 
   useEffect(() => {
-    // Escuchar cambios en el tamaño de la pantalla
     window.addEventListener('resize', handleResize);
 
     return () => {
-      // Limpiar el evento en el desmontaje
       window.removeEventListener('resize', handleResize);
     };
   }, []);
@@ -46,6 +43,14 @@ const Header = () => {
     };
   }, []);
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
+
   return (
     <header
       className={`fixed top-0 z-50 left-0 w-full flex justify-between items-center p-4 pl-4 pr-4 md:pl-16 md:pr-16 transition-all duration-300 ${
@@ -53,7 +58,7 @@ const Header = () => {
       }`}
     >
       {/* Logo de GIED */}
-      <Link to="/" className="cursor-pointer">
+      <Link to="/" className="cursor-pointer" onClick={scrollToTop}>
         <img
           src={logo}
           alt="GIED Logo"
@@ -80,12 +85,6 @@ const Header = () => {
             fill={instagramFill}
           />
         </a>
-
-        <img
-          src={cataluña}
-          alt="Bandera de Cataluña"
-          className="rounded-full h-8 w-8"
-        />
       </div>
     </header>
   );

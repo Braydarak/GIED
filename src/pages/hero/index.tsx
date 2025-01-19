@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import bg from '../../assets/images/bg-image.png';
+import bg from '../../assets/images/bg-image.webp';
 import { useEffect, useState } from "react";
 
 const HeroSection = () => {

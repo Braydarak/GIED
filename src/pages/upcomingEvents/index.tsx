@@ -19,45 +19,45 @@ const UpcomingEvents = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {upcomingEvents.map((event, index) => (
             <motion.div
-              key={event.id}
-              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
-              initial={{
-                opacity: 0,
-                x: isMobile ? 100 : 400,
-              }}
-              whileInView={{
-                opacity: 1,
-                x: 0,
-              }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{
-                duration: 1.0,
-                delay: index * 0.1,
-              }}
-            >
-              <img
-                src={event.image}
-                alt={event.title}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-2xl font-panton font-bold text-turquesa80 mb-2">
-                  {event.title}
-                </h3>
-                <p className="text-turquesa65 font-montserrat text-sm mb-4">
-                  {formatDate(event.date)} - {event.location}
-                </p>
-                <p className="text-gray-600 mb-4 font-montserrat min-h-3">
-                  {event.description}
-                </p>
-                <button
-                  onClick={() => navigate(`/event-details/${event.id}`)}
-                  className="bg-principal text-white py-2 px-10 md:w-auto w-full rounded-lg hover:bg-turquesa80 transition-all duration-300"
-                >
-                  Inscribirme
-                </button>
-              </div>
-            </motion.div>
+            key={event.id}
+            className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full"
+            initial={{
+              opacity: 0,
+              x: isMobile ? 100 : 400,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{
+              duration: 1.0,
+              delay: index * 0.1,
+            }}
+          >
+            <img
+              src={event.image}
+              alt={event.title}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-6 flex flex-col h-full">
+              <h3 className="text-2xl font-panton font-bold text-turquesa80 mb-2">
+                {event.title}
+              </h3>
+              <p className="text-turquesa65 font-montserrat text-sm mb-4">
+                {formatDate(event.date)} - {event.location}
+              </p>
+              <p className="text-gray-600 mb-4 font-montserrat min-h-3 flex-grow">
+                {event.description}
+              </p>
+              <button
+                onClick={() => navigate(`/event-details/${event.id}`)}
+                className="bg-principal text-white py-2 px-10 md:w-auto w-full rounded-lg hover:bg-turquesa80 transition-all duration-300 mt-auto"
+              >
+                Inscribirme
+              </button>
+            </div>
+          </motion.div>
           ))}
         </div>
       </div>
