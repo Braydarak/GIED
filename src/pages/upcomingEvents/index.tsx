@@ -1,59 +1,11 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import upcoming_events from "../../data/events.json";
-
-interface Event {
-  id: number;
-  title: string;
-  date: string;
-  location: string;
-  description: string;
-  image: string;
-}
-
-const formatDate = (dateString: string): string => {
-  const dateParts = dateString.split("-");
-  const eventDate = new Date(`${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`);
-
-  const months = [
-    "Enero",
-    "Febrero",
-    "Marzo",
-    "Abril",
-    "Mayo",
-    "Junio",
-    "Julio",
-    "Agosto",
-    "Septiembre",
-    "Octubre",
-    "Noviembre",
-    "Diciembre",
-  ];
-
-  const day = eventDate.getDate();
-  const month = months[eventDate.getMonth()];
-  const year = eventDate.getFullYear();
-
-  return `${day} de ${month}, ${year}`;
-};
+import { filterUpcomingEvents, formatDate } from "../../utils/functions";
 
 const UpcomingEvents = () => {
   const navigate = useNavigate();
-  const currentDate = new Date();
-
-  // Determinar si la pantalla es mobile
   const isMobile = window.innerWidth < 768;
-
-  // Filtrar los eventos que aún no han pasado
-  const filterUpcomingEvents = (events: Event[]) => {
-    return events.filter((event) => {
-      const eventDateParts = event.date.split("-");
-      const eventDate = new Date(
-        `${eventDateParts[2]}-${eventDateParts[1]}-${eventDateParts[0]}`
-      );
-      return eventDate > currentDate;
-    });
-  };
 
   const upcomingEvents = filterUpcomingEvents(upcoming_events.events);
 
@@ -71,7 +23,7 @@ const UpcomingEvents = () => {
               className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
               initial={{
                 opacity: 0,
-                x: isMobile ? 100 : 400, 
+                x: isMobile ? 100 : 400,
               }}
               whileInView={{
                 opacity: 1,
