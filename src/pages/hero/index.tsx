@@ -1,6 +1,22 @@
+import { motion } from "framer-motion";
 import bg from '../../assets/images/bg-image.png';
+import { useEffect, useState } from "react";
 
 const HeroSection = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Detectar si es un dispositivo móvil
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize(); // Ejecutar al cargar la página
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Forzar que el scroll comience en la parte superior
+  }, []);
+
   const scrollToSection = () => {
     const section = document.getElementById('upcoming-events');
     if (section) {
@@ -21,22 +37,35 @@ const HeroSection = () => {
       {/* Contenido */}
       <div className="relative z-10 text-center">
         {/* Título principal */}
-        <h1 className="text-5xl font-panton font-bold text-principal mb-4 sm:text-4xl md:text-5xl">
+        <motion.h1
+          className="text-5xl font-panton font-bold text-principal mb-4 sm:text-4xl md:text-5xl"
+          initial={{ opacity: 0, x: isMobile ? -50 : -200 }} // Animación menos pronunciada en mobile
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        >
           ¡Bienvenidos a GIED!
-        </h1>
+        </motion.h1>
 
         {/* Subtítulo */}
-        <p className="text-xl font-panton text-turquesa80 mb-8 sm:text-lg sm:px-6 md:max-w-xl mx-auto">
+        <motion.p
+          className="text-xl font-panton text-turquesa80 mb-8 sm:text-lg sm:px-6 md:max-w-xl mx-auto"
+          initial={{ opacity: 0, x: isMobile ? 50 : 200 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+        >
           Descubre los mejores eventos deportivos y mantente al día con nuestras actividades deportivas exclusivas.
-        </p>
+        </motion.p>
 
         {/* Botón CTA */}
-        <button
+        <motion.button
           onClick={scrollToSection}
           className="bg-principal text-white text-lg py-3 px-10 rounded-lg hover:bg-turquesa80 transition-all ease-in-out duration-300 sm:py-2 sm:px-6"
+          initial={{ opacity: 0, y: isMobile ? 20 : 50 }} // Menos desplazamiento en mobile
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
         >
           Ver Próximos Eventos
-        </button>
+        </motion.button>
       </div>
     </section>
   );

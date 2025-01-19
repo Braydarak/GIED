@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import upcoming_events from "../../data/events.json";
-
 
 // Función para formatear las fechas a 'dd de MMMM, yyyy'
 const formatDate = (dateString: string): string => {
@@ -10,7 +9,6 @@ const formatDate = (dateString: string): string => {
     `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`
   ); // Crear un objeto Date con formato yyyy-mm-dd
 
-  // Array de nombres de meses
   const months = [
     "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
     "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
@@ -20,7 +18,6 @@ const formatDate = (dateString: string): string => {
   const month = months[eventDate.getMonth()];
   const year = eventDate.getFullYear();
 
-  // Retornar la fecha en formato 'dd de MMMM, yyyy'
   return `${day} de ${month}, ${year}`;
 };
 
@@ -33,6 +30,11 @@ const EventsDetails = () => {
     email: "",
     phone: "",
   });
+
+  // Asegurarse de que el scroll esté al inicio al cargar el componente
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -54,7 +56,7 @@ const EventsDetails = () => {
   }
 
   return (
-    <section className="bg-turquesa10 pt-32 text-black min-h-screen py-16 px-8 md:px-16">
+    <section className="bg-turquesa10 pt-32 text-black min-h-screen py-16 px-8 md:px-16 overflow-x-hidden">
       {/* Encabezado */}
       <div className="max-w-4xl mx-auto text-center">
         <h1 className="text-4xl font-bold text-principal mb-4 font-panton">
@@ -70,7 +72,6 @@ const EventsDetails = () => {
         <h2 className="text-2xl text-turquesa80 font-semibold mb-4 font-panton">
           Detalles del Evento
         </h2>
-        {/* Usamos formatDate para mostrar la fecha formateada */}
         <p className="mb-4 text-turquesa65">{formatDate(event.date)}</p>
         <p className="mb-4 text-turquesa80">{event.location}</p>
         <img src={event.image} alt={event.title} className="w-full rounded-lg mb-4" />
