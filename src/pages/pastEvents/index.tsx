@@ -13,7 +13,6 @@ const PastEventsPage = () => {
         Eventos Pasados
       </h1>
 
-      {/* Lista de eventos pasados */}
       <div className="max-w-4xl mx-auto space-y-12 md:pl-0 pl-[10px] md:pr-0 pr-[10px]">
         {pastEvents.length > 0 ? (
           pastEvents.map((event, index) => (
@@ -34,11 +33,13 @@ const PastEventsPage = () => {
               viewport={{ once: true, amount: 0.3 }} // Solo animar una vez
               transition={{ duration: 1.0, delay: index * 0.1 }} // Suavidad y cascada
             >
-              <img
-                src={event.image}
-                alt={event.title}
-                className="h-48 md:w-48 object-cover rounded-lg w-full"
-              />
+              <picture>
+                <img
+                  src={event.image}
+                  alt={`Imagen del evento: ${event.title}`} 
+                  className="h-48 md:w-48 object-cover rounded-lg w-full"
+                />
+              </picture>
               <div className="flex-1">
                 <h2 className="text-2xl font-bold text-white font-panton">
                   {event.title}

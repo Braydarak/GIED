@@ -113,6 +113,7 @@ const EventsDetails = () => {
           </div>
           <button
             type="submit"
+            aria-label={`Inscribirme al evento: ${event.title}`}
             className="bg-principal text-white px-6 py-3 rounded-lg w-full mt-4 hover:bg-turquesa80 transition-all"
           >
             Inscribirme

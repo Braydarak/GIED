@@ -75,6 +75,7 @@ const ContactSection = () => {
 
           <button
             type="submit"
+            aria-label={`Enviar mensaje a GIED para ponerme en contacto`}
             className="bg-principal text-white py-3 px-8 rounded-md font-semibold hover:bg-turquesa65 transition duration-300"
           >
             Enviar mensaje
