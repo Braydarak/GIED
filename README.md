@@ -1,50 +1,52 @@
-# React + TypeScript + Vite
+GIED - Plataforma de Eventos Deportivos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bienvenido/a al proyecto GIED, una plataforma web de eventos deportivos. Este proyecto está desarrollado utilizando tecnologías modernas y busca proporcionar una experiencia accesible, rápida y eficiente para los usuarios interesados en participar o informarse sobre eventos deportivos.
 
-Currently, two official plugins are available:
+🚀 Propósito de la Web
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+La página de GIED tiene como objetivo:
+	•	Informar a los usuarios sobre próximos eventos deportivos.
+	•	Mostrar eventos pasados y sus detalles destacados.
+	•	Facilitar el acceso a recursos relacionados con el mundo deportivo.
+	•	Ofrecer una experiencia optimizada para dispositivos móviles y de escritorio.
 
-## Expanding the ESLint configuration
+🛠️ Tecnologías Utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Este proyecto está construido utilizando las siguientes tecnologías:
+	•	Frontend:
+	•	React: Biblioteca para construir interfaces de usuario.
+	•	TypeScript: Superset de JavaScript que proporciona tipado estático.
+	•	Tailwind CSS: Framework de utilidades CSS para un diseño rápido y moderno.
+	•	Otras herramientas:
+	•	next.config.js: Configuración personalizada para políticas de seguridad y caché.
+	•	font-display: Implementado para mejorar la carga de fuentes y garantizar la accesibilidad.
+	•	Optimización de imágenes con formatos de nueva generación para acelerar la carga.
 
-- Configure the top-level `parserOptions` property like this:
+  📦 Instalación y Uso
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Sigue estos pasos para configurar y ejecutar el proyecto en tu máquina local:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+1	Clona este repositorio:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+  `git clone https://github.com/tu-usuario/gied.git`
+  `cd gied`
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+2  Instala las dependencias:
+
+  `npm install`
+
+3	Inicia el servidor de desarrollo:
+
+ `npm run dev`
+
+4 El proyecto se ejecutara en el: 
+
+  `http://localhost:5173/`
+
+  🌟 Funcionalidades Clave
+	•	Diseño responsivo adaptado para dispositivos móviles y de escritorio.
+	•	Contraste de colores optimizado para accesibilidad (AA/AAA según WCAG).
+	•	Imágenes optimizadas con caché de largo plazo.
+	•	Políticas de seguridad avanzadas (CSP, X-Content-Type-Options, etc.).
+	•	Navegación fluida y optimizada con y React.
+
