@@ -73,6 +73,7 @@ const Header = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="cursor-pointer"
+          aria-label='Instagram'
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           style={{

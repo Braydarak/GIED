@@ -59,6 +59,7 @@ const HeroSection = () => {
         {/* Botón CTA */}
         <motion.button
           onClick={scrollToSection}
+          aria-label={`Presionar para ver los próximos eventos`}
           className="bg-principal text-white text-lg py-3 px-10 rounded-lg hover:bg-turquesa80 transition-all ease-in-out duration-300 sm:py-2 sm:px-6"
           initial={{ opacity: 0, y: isMobile ? 20 : 50 }} // Menos desplazamiento en mobile
           animate={{ opacity: 1, y: 0 }}
