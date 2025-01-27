@@ -62,7 +62,7 @@ const Header = () => {
         <img
           src={logo}
           alt="GIED Logo"
-          className="h-12 md:h-24 transition-all duration-300 w-auto"
+          className="h-12 md:h-24 transition-all duration-300 w-auto aspect-3/2"
         />
       </Link>
 

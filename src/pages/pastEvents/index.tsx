@@ -37,7 +37,7 @@ const PastEventsPage = () => {
                 <img
                   src={event.image}
                   alt={`Imagen del evento: ${event.title}`} 
-                  className="h-48 md:w-48 object-cover rounded-lg w-full"
+                  className="h-48 md:w-48 object-cover rounded-lg w-[400px] aspect-3/2"
                   loading="lazy"
                 />
               </picture>

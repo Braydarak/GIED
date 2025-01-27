@@ -40,7 +40,7 @@ const UpcomingEvents = () => {
                 <img
                   src={event.image}
                   alt={`Imagen del evento: ${event.title}`} 
-                  className="w-full h-48 object-cover"
+                  className="w-full h-48 object-cover aspect-3/2"
                   loading="lazy"
                 />
               </picture>

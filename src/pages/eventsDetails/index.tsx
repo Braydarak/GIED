@@ -53,7 +53,8 @@ const EventsDetails = () => {
         <img
           src={event.image}
           alt={event.title}
-          className="md:w-1/2 h-auto object-cover"
+          className="md:w-1/2 h-auto object-cover aspect-3/2"
+          loading="lazy"
         />
         <div className="p-8 md:w-1/2">
           <h2 className="text-2xl text-turquesa80 font-semibold mb-4 font-panton">
