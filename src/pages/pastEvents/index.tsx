@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import past_events from "../../data/events.json";
 import { filterPastEvents, formatDate } from "../../utils/functions";
+import { memo } from "react";
 
 const PastEventsPage = () => {
   const pastEvents = filterPastEvents(past_events.events);
-
   const isMobile = window.innerWidth < 768;
 
   return (
@@ -38,6 +38,7 @@ const PastEventsPage = () => {
                   src={event.image}
                   alt={`Imagen del evento: ${event.title}`} 
                   className="h-48 md:w-48 object-cover rounded-lg w-full"
+                  loading="lazy"
                 />
               </picture>
               <div className="flex-1">
@@ -66,4 +67,4 @@ const PastEventsPage = () => {
   );
 };
 
-export default PastEventsPage;
+export default memo(PastEventsPage);

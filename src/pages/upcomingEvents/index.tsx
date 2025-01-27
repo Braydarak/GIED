@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { memo } from 'react';
 import upcoming_events from "../../data/events.json";
 import { filterUpcomingEvents, formatDate } from "../../utils/functions";
 
@@ -40,6 +41,7 @@ const UpcomingEvents = () => {
                   src={event.image}
                   alt={`Imagen del evento: ${event.title}`} 
                   className="w-full h-48 object-cover"
+                  loading="lazy"
                 />
               </picture>
               <div className="p-6 flex flex-col h-full">
@@ -68,4 +70,5 @@ const UpcomingEvents = () => {
   );
 };
 
-export default UpcomingEvents;
+
+export default memo(UpcomingEvents);
