@@ -13,7 +13,6 @@ function App() {
         <Header /> {/* El header se mantiene */}
 
         <Routes>
-          {/* Ruta para la página principal */}
           <Route
             path="/"
             element={
