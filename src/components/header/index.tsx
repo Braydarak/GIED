@@ -15,11 +15,14 @@ const Header = () => {
 
   const isEventDetailsPage = /^\/event-details\/\d+$/.test(location.pathname);
 
-  const instagramFill =
-  isHovered
-    ? '#00a59e'
-    : isEventDetailsPage
+const knownRoutes = ['/', '/home', '/about', '/contact', '/event-details/:id']; // Include all known routes
+const is404Page = !knownRoutes.some(route => new RegExp(`^${route.replace(/:\w+/g, '\\d+')}$`).test(location.pathname));
+
+const instagramFill =
+  isEventDetailsPage || is404Page
     ? '#000000' 
+    : isHovered
+    ? '#00a59e'
     : scrolled
     ? '#000000' 
     : '#ffffff'; 
@@ -62,7 +65,7 @@ const Header = () => {
         <img
           src={logo}
           alt="GIED Logo"
-          className="h-12 md:h-24 transition-all duration-300 w-auto aspect-3/2"
+          className="h-12 md:h-24 transition-all duration-300 w-full aspect-3/2"
         />
       </Link>
 

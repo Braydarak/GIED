@@ -6,6 +6,7 @@ import ContactSection from './pages/contact';
 import Footer from './components/footer';
 import UpcomingEvents from './pages/upcomingEvents'; // Importar la nueva página
 import EventsDetails from './pages/eventsDetails';
+import NotFoundPage from './pages/404';
 
 function App() {
   return (
@@ -26,7 +27,8 @@ function App() {
           />
 
           {/* Ruta para la página de detalles del torneo */}
-          <Route path="/event-details/:id"  element={<EventsDetails />} />
+        <Route path="/event-details/:id" element={<EventsDetails />} />
+        <Route path="*" element={<NotFoundPage />} />
         </Routes>
 
         <Footer /> {/* Footer al final */}
