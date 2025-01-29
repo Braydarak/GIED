@@ -8,7 +8,7 @@ const PastEventsPage = () => {
   const isMobile = window.innerWidth < 768;
 
   return (
-    <section className="bg-turquesa10 text-white min-h-screen pt-20 pb-20 overflow-x-hidden">
+    <section className="bg-turquesa10 text-white min-h-screen pt-20 pb-20 overflow-x-hidden" id="past-events">
       <h1 className="text-4xl text-center font-panton text-principal font-bold mb-12">
         Eventos Pasados
       </h1>
