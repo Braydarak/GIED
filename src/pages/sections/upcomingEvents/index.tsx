@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { memo } from 'react';
-import upcoming_events from "../../data/events.json";
-import { filterUpcomingEvents, formatDate } from "../../utils/functions";
+import upcoming_events from "../../../data/events.json";
+import { filterUpcomingEvents, formatDate } from "../../../utils/functions";
 
 const UpcomingEvents = () => {
   const navigate = useNavigate();

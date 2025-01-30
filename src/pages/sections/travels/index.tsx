@@ -1,0 +1,62 @@
+import { useState, useEffect } from "react";
+import travelsData from "../../../data/travels.json";
+
+interface Travel {
+  id: number;
+  title: string;
+  image: string;
+  date: string;
+  description: string;
+}
+
+const TravelSection = () => {
+  const travel: Travel = travelsData[0]; // Toma el primer viaje del JSON
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(travel.date));
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft(travel.date));
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [travel.date]);
+
+  function calculateTimeLeft(targetDate: string) {
+    const difference = new Date(targetDate).getTime() - new Date().getTime();
+    if (difference <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+
+    return {
+      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((difference / (1000 * 60)) % 60),
+      seconds: Math.floor((difference / 1000) % 60),
+    };
+  }
+
+  return (
+    <section className=" flex flex-col justify-center items-center bg-turquesa10 pt-20 pb-20" id="travels">
+      <h2 className="text-principal font-panton text-4xl mb-10">
+        Viajes con GIED
+      </h2>
+      <div className="bg-white flex justify-around shadow-lg rounded-lg overflow-hidden w-[80%] p-10">
+        <img
+          src={travel.image}
+          alt="Viaje"
+          className="object-cover rounded-lg w-[400px] aspect-3/2"
+          loading="lazy"
+        />
+        <div className="p-6 text-center grid grid-rows-3 justify-center">
+          <h2 className="text-principal mb-5 text-4xl font-panton">{travel.title}</h2>
+          {/* Cuenta atrás */}
+          <div className="text-4xl font-bold text-principal mb-4 uppercase">
+            {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m{" "}
+            {timeLeft.seconds}s
+          </div>
+          {/* Descripción */}
+          <p className="text-turquesa80 text-lg">{travel.description}</p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default TravelSection;
