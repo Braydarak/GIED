@@ -160,7 +160,7 @@ const Header = () => {
           </ul>
 
           {/* Instagram en mobile (solo dentro del menú) */}
-          <div className="md:hidden absolute bottom-4 w-full flex justify-center mb-8">
+          <div className="md:hidden absolute bottom-4 w-full flex justify-end items-center pr-8 mb-8">
             <a
               href="https://www.instagram.com/gied.eventos/"
               target="_blank"
