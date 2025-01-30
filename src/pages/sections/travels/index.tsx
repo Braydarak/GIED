@@ -37,7 +37,7 @@ const TravelSection = () => {
       <h2 className="text-principal font-panton text-4xl mb-10">
         Viajes con GIED
       </h2>
-      <div className="bg-white flex justify-around shadow-lg rounded-lg overflow-hidden w-[80%] p-10">
+      <div className="bg-white flex justify-around shadow-lg rounded-lg overflow-hidden w-[80%] p-4 md:p-4 flex-col md:flex-row">
         <img
           src={travel.image}
           alt="Viaje"
@@ -45,14 +45,14 @@ const TravelSection = () => {
           loading="lazy"
         />
         <div className="p-6 text-center grid grid-rows-3 justify-center">
-          <h2 className="text-principal mb-5 text-4xl font-panton">{travel.title}</h2>
+          <h2 className="text-principal mb-5 text-2xl md:text-4xl font-panton">{travel.title}</h2>
           {/* Cuenta atrás */}
-          <div className="text-4xl font-bold text-principal mb-4 uppercase">
+          <div className="text-2xl md:text-4xl font-bold text-principal mb-4 uppercase">
             {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m{" "}
             {timeLeft.seconds}s
           </div>
           {/* Descripción */}
-          <p className="text-turquesa80 text-lg">{travel.description}</p>
+          <p className="text-turquesa80 text-l md:text-md">{travel.description}</p>
         </div>
       </div>
     </section>
