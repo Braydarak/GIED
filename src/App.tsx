@@ -1,12 +1,13 @@
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/header';
-import HeroSection from './pages/hero';
-import PastEventsPage from './pages/pastEvents';
-import ContactSection from './pages/contact';
+import HeroSection from './pages/sections/hero';
+import PastEventsPage from './pages/sections/pastEvents';
+import ContactSection from './pages/sections/contact';
 import Footer from './components/footer';
-import UpcomingEvents from './pages/upcomingEvents'; // Importar la nueva página
+import UpcomingEvents from './pages/sections/upcomingEvents'; // Importar la nueva página
 import EventsDetails from './pages/eventsDetails';
 import NotFoundPage from './pages/404';
+import TravelSection from './pages/sections/travels';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
               <>
                 <HeroSection /> {/* Hero Section */}
                 <UpcomingEvents /> {/* Sección de próximos eventos */}
+                <TravelSection />
                 <PastEventsPage /> {/* Página de eventos pasados */}
                 <ContactSection /> {/* Sección de contacto */}
               </>

@@ -55,6 +55,14 @@ const Header = () => {
     }
   };
 
+  const scrollToContact = () => {
+    const section = document.getElementById("contact");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      setMenuOpen(false);
+    }
+  };
+
   return (
     <header
       className={`fixed top-0 z-50 left-0 w-full flex justify-between items-center p-4 pl-4 pr-4 md:pl-16 md:pr-16 transition-all duration-300 ${
@@ -66,7 +74,7 @@ const Header = () => {
         <img
           src={logo}
           alt="GIED Logo"
-          className="h-12 md:h-24 transition-all duration-300 w-full aspect-3/2"
+          className="h-12 md:h-24 transition-all duration-300 w-auto aspect-3/2"
         />
       </Link>
 
@@ -115,20 +123,21 @@ const Header = () => {
                 Proximos Eventos
               </span>
             </li>
-            <li>
-              <span
-                onClick={scrollToPastEvents}
-                className="text-gray-800 hover:text-principal transition cursor-pointer"
-              >
-                Eventos Pasados
-              </span>
-            </li>
+            
             <li>
               <span
                 onClick={scrollToTravels}
                 className="text-gray-800 hover:text-principal transition cursor-pointer"
               >
                 Viajes
+              </span>
+            </li>
+            <li>
+              <span
+                onClick={scrollToPastEvents}
+                className="text-gray-800 hover:text-principal transition cursor-pointer"
+              >
+                Eventos Pasados
               </span>
             </li>
             <li>
@@ -139,6 +148,14 @@ const Header = () => {
               >
                 Galeria
               </Link>{" "}
+            </li>
+            <li>
+              <span
+                onClick={scrollToContact}
+                className="text-gray-800 hover:text-principal transition cursor-pointer"
+              >
+                Contáctanos
+              </span>
             </li>
           </ul>
 
