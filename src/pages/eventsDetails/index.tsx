@@ -1,9 +1,11 @@
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import upcoming_events from "../../data/events.json";
-import { formatDate } from "../../utils/functions";
+import { formatDate, ScrollToTop } from "../../utils/functions";
+
 
 const EventsDetails = () => {
+  ScrollToTop()
   const { id } = useParams<{ id: string }>();
   const event = upcoming_events.events.find((e) => e.id === Number(id));
 
@@ -12,10 +14,6 @@ const EventsDetails = () => {
     email: "",
     phone: "",
   });
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;

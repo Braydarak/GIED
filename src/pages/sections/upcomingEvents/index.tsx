@@ -2,11 +2,10 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { memo } from 'react';
 import upcoming_events from "../../../data/events.json";
-import { filterUpcomingEvents, formatDate } from "../../../utils/functions";
+import { filterUpcomingEvents, formatDate, isMobile } from "../../../utils/functions";
 
 const UpcomingEvents = () => {
   const navigate = useNavigate();
-  const isMobile = window.innerWidth < 768;
 
   const upcomingEvents = filterUpcomingEvents(upcoming_events.events);
 

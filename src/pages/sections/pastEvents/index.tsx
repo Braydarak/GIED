@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
 import past_events from "../../../data/events.json";
-import { filterPastEvents, formatDate } from "../../../utils/functions";
+import { filterPastEvents, formatDate, isMobile } from "../../../utils/functions";
 import { memo } from "react";
 
 const PastEventsPage = () => {
   const pastEvents = filterPastEvents(past_events.events);
-  const isMobile = window.innerWidth < 768;
 
   return (
     <section className="bg-white text-white min-h-screen pt-20 pb-20 scroll-mt-24" id="past-events">

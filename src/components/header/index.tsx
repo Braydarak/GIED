@@ -35,7 +35,7 @@ const Header = () => {
     const section = document.getElementById("upcoming-events");
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
-      setMenuOpen(false); 
+      setMenuOpen(false);
     }
   };
 
@@ -43,7 +43,7 @@ const Header = () => {
     const section = document.getElementById("past-events");
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
-      setMenuOpen(false); 
+      setMenuOpen(false);
     }
   };
 
@@ -123,7 +123,7 @@ const Header = () => {
                 Proximos Eventos
               </span>
             </li>
-            
+
             <li>
               <span
                 onClick={scrollToTravels}
