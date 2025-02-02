@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import bg from '../../../assets/images/bg-image.webp';
+import bg from '../../../assets/images/bg-image.avif';
 import { useEffect } from "react";
 import { isMobile, ScrollToTop } from "../../../utils/functions";
 
