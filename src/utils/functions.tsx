@@ -1,4 +1,7 @@
+/* eslint-disable react-refresh/only-export-components */
 import { Event } from "./types";
+import { useEffect } from "react";
+
 
 const currentDate = new Date();
 
@@ -47,3 +50,13 @@ export const filterUpcomingEvents = (events: Event[]) => {
     return eventDate > currentDate;
   });
 };
+
+
+export const ScrollToTop =() => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
+}
+
+
+export const isMobile = window.innerWidth < 768;

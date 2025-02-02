@@ -1,20 +1,19 @@
 import { motion } from "framer-motion";
 import bg from '../../../assets/images/bg-image.webp';
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { isMobile, ScrollToTop } from "../../../utils/functions";
 
 const HeroSection = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  ScrollToTop()
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    const handleResize = () => isMobile;
     handleResize(); 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+
 
   const scrollToSection = () => {
     const section = document.getElementById('upcoming-events');
@@ -55,7 +54,7 @@ const HeroSection = () => {
           onClick={scrollToSection}
           aria-label={`Presionar para ver los próximos eventos`}
           className="bg-principal text-white text-lg py-3 px-10 rounded-lg hover:bg-turquesa80 transition-all ease-in-out duration-300 sm:py-2 sm:px-6"
-          initial={{ opacity: 0, y: isMobile ? 20 : 50 }} // Menos desplazamiento en mobile
+          initial={{ opacity: 0, y: isMobile ? 20 : 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
         >
