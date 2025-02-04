@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../../assets/images/LOGOTIPO GIED VERSION 2.webp";
 import InstagramLogo from "../instagramLogo";
 import MenuIcon from "../menuIcon";
@@ -7,12 +7,15 @@ import CloseIcon from "../closeIcon";
 
 const Header = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const isEventDetailsPage = /^\/event-details\/\d+$/.test(location.pathname);
-  const instagramFill = isEventDetailsPage
+  const isGalleryPage = /^\/gallery(?:\/\d+)?$/.test(location.pathname); // Añadimos esta línea para verificar /gallery o /gallery/id
+  const isEventDetailsPage = /^\/event-details(?:\/\d+)?$/.test(location.pathname); // Añadimos esta línea para verificar /event-details o /event-details/id
+
+  const instagramFill = isEventDetailsPage || isGalleryPage 
     ? "#000000"
     : isHovered
     ? "#00a59e"
@@ -26,43 +29,27 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  const handleNavigation = (sectionId: string) => {
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        scrollToSection(sectionId);
+      }, 300); 
+    } else {
+      scrollToSection(sectionId);
+    }
     setMenuOpen(false);
   };
-
-  const scrollToUpcomingEvents = () => {
-    const section = document.getElementById("upcoming-events");
+  
+  // Función que maneja el scroll con offset
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-      setMenuOpen(false);
+      const headerOffset = 80; // Ajustá este valor según la altura de tu header
+      const sectionPosition = section.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top: sectionPosition - headerOffset, behavior: "smooth" });
     }
   };
-
-  const scrollToPastEvents = () => {
-    const section = document.getElementById("past-events");
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-      setMenuOpen(false);
-    }
-  };
-
-  const scrollToTravels = () => {
-    const section = document.getElementById("travels");
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-      setMenuOpen(false);
-    }
-  };
-
-  const scrollToContact = () => {
-    const section = document.getElementById("contact");
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-      setMenuOpen(false);
-    }
-  };
-
   return (
     <header
       className={`fixed top-0 z-50 left-0 w-full flex justify-between items-center p-4 pl-4 pr-4 md:pl-16 md:pr-16 transition-all duration-300 ${
@@ -70,7 +57,7 @@ const Header = () => {
       }`}
     >
       {/* Logo de GIED */}
-      <Link to="/" className="cursor-pointer" onClick={scrollToTop}>
+      <Link to="/" className="cursor-pointer" onClick={() => handleNavigation("hero")}>
         <img
           src={logo}
           alt="GIED Logo"
@@ -78,10 +65,8 @@ const Header = () => {
         />
       </Link>
 
-      {/* Instagram Logo: Solo visible en desktop */}
-
       {/* Menú Hamburguesa */}
-      <div className="relative flex items-center space-x-8 ">
+      <div className="relative flex items-center space-x-8">
         <a
           href="https://www.instagram.com/gied.eventos/"
           target="_blank"
@@ -117,41 +102,44 @@ const Header = () => {
           <ul className="flex flex-col items-end text-right space-y-6 p-8 font-montserrat text-2xl gap-8 mr-8">
             <li>
               <span
-                onClick={scrollToUpcomingEvents}
+                onClick={() => handleNavigation("upcoming-events")}
                 className="text-gray-800 hover:text-principal transition cursor-pointer"
               >
-                Proximos Eventos
+                Próximos Eventos
               </span>
             </li>
 
             <li>
               <span
-                onClick={scrollToTravels}
+                onClick={() => handleNavigation("travels")}
                 className="text-gray-800 hover:text-principal transition cursor-pointer"
               >
                 Viajes
               </span>
             </li>
+
             <li>
               <span
-                onClick={scrollToPastEvents}
+                onClick={() => handleNavigation("past-events")}
                 className="text-gray-800 hover:text-principal transition cursor-pointer"
               >
                 Eventos Pasados
               </span>
             </li>
+
             <li>
               <Link
                 to="/gallery"
                 className="text-gray-800 hover:text-principal transition cursor-pointer"
                 onClick={() => setMenuOpen(false)}
               >
-                Galeria
-              </Link>{" "}
+                Galería
+              </Link>
             </li>
+
             <li>
               <span
-                onClick={scrollToContact}
+                onClick={() => handleNavigation("contact")}
                 className="text-gray-800 hover:text-principal transition cursor-pointer"
               >
                 Contáctanos

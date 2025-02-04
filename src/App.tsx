@@ -8,6 +8,7 @@ import UpcomingEvents from './pages/sections/upcomingEvents'; // Importar la nue
 import EventsDetails from './pages/eventsDetails';
 import NotFoundPage from './pages/404';
 import TravelSection from './pages/sections/travels';
+import Gallery from './pages/gallery';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
 
           {/* Ruta para la página de detalles del torneo */}
         <Route path="/event-details/:id" element={<EventsDetails />} />
+        <Route path='/gallery' element={<Gallery />} />
         <Route path="*" element={<NotFoundPage />} />
         </Routes>
 
