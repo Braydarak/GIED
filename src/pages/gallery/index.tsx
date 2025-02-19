@@ -36,19 +36,19 @@ const Gallery = () => {
 
   return (
     <div className="min-h-screen flex flex-col pt-32 items-center bg-turquesa10 text-white">
-      <h1 className="text-3xl font-bold mb-8 font-panton text-principal">
+      <h1 className="text-4xl font-bold text-principal font-panton text-center mb-10">
         Galería de Eventos
       </h1>
 
       <p className="text-lg text-turquesa80 mb-8 font-montserrat max-w-[36ch] text-center md:max-w-full">
-        Selecciona uno de nuestros eventos para ver las imágenes.
+        Selecciona uno de los eventos para ver las imágenes.
       </p>
       {pastEvents.length === 0 ? (
-        <p className="text-center text-gray-300">
+      <p className="text-center text-turquesa80 h-screen flex justify-center items-center text-lg">
           Aún no hay eventos con galería disponible.
         </p>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full px-8 mb-8">
           {pastEvents.map((event) => (
             <div key={event.id} className="relative group">
               <img

@@ -9,6 +9,7 @@ import EventsDetails from './pages/eventsDetails';
 import NotFoundPage from './pages/404';
 import TravelSection from './pages/sections/travels';
 import Gallery from './pages/gallery';
+import EventGallery from './pages/eventGallery';
 
 function App() {
   return (
@@ -32,10 +33,11 @@ function App() {
           {/* Ruta para la página de detalles del torneo */}
         <Route path="/event-details/:id" element={<EventsDetails />} />
         <Route path='/gallery' element={<Gallery />} />
+        <Route path="/gallery/:id" element={<EventGallery />} />
         <Route path="*" element={<NotFoundPage />} />
         </Routes>
 
-        <Footer /> {/* Footer al final */}
+        <Footer />
       </div>
   );
 }
