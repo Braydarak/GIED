@@ -7,7 +7,12 @@
       "location": "Soller, Mallorca",
       "description": "Una experiencia única para los amantes del deporte al aire libre.",
       "long_description": "La Carrera de Montaña 2025 promete ser una aventura inolvidable en los hermosos paisajes de Soller, Mallorca. Este evento reúne a corredores de todos los niveles para disfrutar de senderos desafiantes, vistas espectaculares y un ambiente deportivo incomparable. Ideal para quienes buscan combinar deporte, naturaleza y comunidad.",
-      "image": "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981173/GIED/ubnjwvt6uvq3z8lakkio.webp"
+      "image": "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981173/GIED/ubnjwvt6uvq3z8lakkio.webp",
+      "galleryImages": [
+        "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981108/GIED/vwy871lozkzceqibyfxh.webp",
+        "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981108/GIED/vwy871lozkzceqibyfxh.webp",
+        "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981108/GIED/vwy871lozkzceqibyfxh.webp"
+      ]
     },
     {
       "id": 2,
@@ -16,7 +21,12 @@
       "location": "Palma, Mallorca",
       "description": "Nadar, correr y pedalear junto al mar.",
       "long_description": "El Triatlón Costero es una oportunidad única para probar tus habilidades en tres disciplinas. La competencia se lleva a cabo junto al impresionante mar Mediterráneo, ofreciendo a los participantes y espectadores un espectáculo natural incomparable. Vive la adrenalina y el espíritu competitivo en este evento deportivo de primer nivel.",
-      "image": "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981173/GIED/oo1u16bmmkozctvon63v.webp"
+      "image": "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981173/GIED/oo1u16bmmkozctvon63v.webp",
+      "galleryImages": [
+        "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981108/GIED/vwy871lozkzceqibyfxh.webp",
+        "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981108/GIED/vwy871lozkzceqibyfxh.webp",
+        "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981108/GIED/vwy871lozkzceqibyfxh.webp"
+      ]
     },
     {
       "id": 3,
@@ -25,7 +35,12 @@
       "location": "Son Servera, Mallorca",
       "description": "Un evento deportivo para disfrutar en familia.",
       "long_description": "El Torneo de Fútbol Infantil reúne a jóvenes talentos en un día lleno de emoción y espíritu deportivo. Equipos de toda la región competirán en un ambiente amistoso, con actividades y entretenimiento para toda la familia. Ven a apoyar a las futuras estrellas del fútbol en este evento imperdible.",
-      "image": "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981173/GIED/me6vqhbekmbubtcpqoyc.webp"
+      "image": "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981173/GIED/me6vqhbekmbubtcpqoyc.webp",
+      "galleryImages": [
+        "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981108/GIED/vwy871lozkzceqibyfxh.webp",
+        "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981108/GIED/vwy871lozkzceqibyfxh.webp",
+        "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981108/GIED/vwy871lozkzceqibyfxh.webp"
+      ]
     },
     {
       "id": 4,
@@ -34,7 +49,12 @@
       "location": "Son Servera, Mallorca",
       "description": "Un torneo amistoso de fútbol 7 con equipos locales. ¡Fue un gran evento!",
       "long_description": "El Torneo de Fútbol 7 fue una celebración del deporte y la comunidad. Equipos locales compitieron en una serie de partidos emocionantes que culminaron en una final espectacular. La camaradería y el espíritu deportivo estuvieron presentes en todo momento, haciendo de este evento un éxito rotundo.",
-      "image": "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981173/GIED/sfupkoaa46ji6oydtmxa.webp"
+      "image": "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981173/GIED/sfupkoaa46ji6oydtmxa.webp",
+      "galleryImages": [
+        "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981108/GIED/vwy871lozkzceqibyfxh.webp",
+        "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981108/GIED/vwy871lozkzceqibyfxh.webp",
+        "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981108/GIED/vwy871lozkzceqibyfxh.webp"
+      ]
     },
     {
       "id": 5,
@@ -43,7 +63,17 @@
       "location": "Son Servera, Mallorca",
       "description": "Una maratón de 42 km con corredores internacionales y locales.",
       "long_description": "La Maratón de la Ciudad es un evento icónico que reúne a corredores de élite y aficionados para recorrer 42 kilómetros a través de las calles de Son Servera. Este evento no solo celebra el atletismo, sino también la comunidad y la cultura local, ofreciendo una experiencia única tanto para participantes como para espectadores.",
-      "image": "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981173/GIED/effvammr06yxc8xslu3y.webp"
+      "image": "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981173/GIED/effvammr06yxc8xslu3y.webp",
+      "galleryImages": [
+        "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981173/GIED/effvammr06yxc8xslu3y.webp",
+        "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981108/GIED/vwy871lozkzceqibyfxh.webp",
+        "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981173/GIED/sfupkoaa46ji6oydtmxa.webp",
+        "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981108/GIED/vwy871lozkzceqibyfxh.webp",
+        "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981173/GIED/effvammr06yxc8xslu3y.webp",
+        "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981108/GIED/vwy871lozkzceqibyfxh.webp",
+        "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981173/GIED/sfupkoaa46ji6oydtmxa.webp",
+        "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981108/GIED/vwy871lozkzceqibyfxh.webp"
+      ]
     },
     {
       "id": 6,
@@ -52,7 +82,12 @@
       "location": "Son Servera, Mallorca",
       "description": "La final del campeonato de rugby con los dos equipos más competitivos de la temporada.",
       "long_description": "La final del campeonato de rugby fue un espectáculo emocionante, con los dos equipos más fuertes de la temporada enfrentándose en un partido lleno de intensidad y estrategia. El evento atrajo a fanáticos de toda la región, creando un ambiente electrizante que no se olvidará pronto.",
-      "image": "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981108/GIED/vwy871lozkzceqibyfxh.webp"
+      "image": "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981108/GIED/vwy871lozkzceqibyfxh.webp",
+      "galleryImages": [
+        "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981108/GIED/vwy871lozkzceqibyfxh.webp",
+        "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981108/GIED/vwy871lozkzceqibyfxh.webp",
+        "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981108/GIED/vwy871lozkzceqibyfxh.webp"
+      ]
     }
   ]
 }

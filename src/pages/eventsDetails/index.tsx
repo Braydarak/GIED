@@ -36,7 +36,6 @@ const EventsDetails = () => {
 
   return (
     <section className="bg-turquesa10 pt-32 text-black min-h-screen py-16 px-8 md:px-16">
-      {/* Encabezado */}
       <div className="max-w-4xl mx-auto text-center">
         <h1 className="text-4xl font-bold text-principal mb-4 font-panton">
           {event.title}
@@ -46,7 +45,6 @@ const EventsDetails = () => {
         </p>
       </div>
 
-      {/* Información del evento con diseño de card */}
       <div className="max-w-6xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row">
         <img
           src={event.image}
@@ -64,7 +62,6 @@ const EventsDetails = () => {
         </div>
       </div>
 
-      {/* Formulario de inscripción */}
       <div className="bg-white shadow-lg rounded-lg p-8 max-w-6xl mx-auto mt-12">
         <h2 className="text-2xl font-semibold mb-6 font-panton text-principal">Inscríbete ahora</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
