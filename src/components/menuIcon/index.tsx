@@ -1,5 +1,5 @@
 interface MenuIconProps {
-    color?: string; // Agregamos la prop opcional color
+    color?: string;
   }
   
   const MenuIcon: React.FC<MenuIconProps> = ({ color = "#000" }) => {
@@ -8,13 +8,13 @@ interface MenuIconProps {
         width="30"
         height="30"
         viewBox="0 0 24 24"
-        fill="none"
+        fill={color}
         xmlns="http://www.w3.org/2000/svg"
       >
 
           <path
             d="M3 12H21M3 6H21M3 18H21"
-            stroke={color} // Aplicamos el color dinámico
+            stroke={color}
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"

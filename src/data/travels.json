@@ -1,9 +1,50 @@
 [
-    {
-      "id": 1,
-      "title": "Viaje a Sóller",
-      "image": "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981173/GIED/ubnjwvt6uvq3z8lakkio.webp",
-      "date": "2025-02-01 10:00:00",
-      "description": "¡Vení a Sóller y participá en un evento deportivo único organizado por GIED!"
-    }
-  ]
+  {
+    "id": 1,
+    "title": "Viaje a Sóller",
+    "image": "https://res.cloudinary.com/dkv8ivkhy/image/upload/v1737981173/GIED/ubnjwvt6uvq3z8lakkio.webp",
+    "date": "2025-02-01",
+    "description": "¡Vení a Sóller y participá en un evento deportivo único organizado por GIED!",
+    "long_description": "Disfrutá de un día lleno de deporte y naturaleza en Sóller, un destino espectacular en Mallorca. El evento incluirá diversas actividades al aire libre, desafíos deportivos y la oportunidad de compartir experiencias con otros entusiastas del deporte. ¡No te lo pierdas!",
+    "departure": {
+      "city": "Palma de Mallorca",
+      "location": "Estación Intermodal, Palma",
+      "time": "08:00"
+    },
+    "arrival": {
+      "city": "Sóller",
+      "location": "Plaza de la Constitución",
+      "time": "09:30"
+    },
+    "itinerary": [
+      {
+        "time": "08:00",
+        "activity": "Salida desde Estación Intermodal, Palma"
+      },
+      {
+        "time": "09:30",
+        "activity": "Llegada a Sóller y bienvenida"
+      },
+      {
+        "time": "10:00",
+        "activity": "Inicio del evento deportivo"
+      },
+      {
+        "time": "13:00",
+        "activity": "Pausa para almuerzo (opcional en restaurante local)"
+      },
+      {
+        "time": "15:00",
+        "activity": "Actividades recreativas y deportivas"
+      },
+      {
+        "time": "17:00",
+        "activity": "Cierre del evento y tiempo libre"
+      },
+      {
+        "time": "18:30",
+        "activity": "Regreso a Palma"
+      }
+    ]
+  }
+]
