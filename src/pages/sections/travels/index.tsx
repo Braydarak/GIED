@@ -36,13 +36,13 @@ const TravelSection = () => {
 
   return (
     <section
-      className=" flex flex-col justify-center items-center bg-turquesa10 pt-20 pb-20"
+      className=" max-w-4xl mx-auto space-y-12 md:pl-0 pl-[10px] md:pr-0 pr-[10px] justify-center items-center md:flex flex-col pb-10"
       id="travels"
     >
-      <h2 className="text-principal font-panton text-4xl mb-10">
+      <h2 className="text-principal font-panton text-4xl mt-8 md:text-nowrap text-center">
         Viajes con GIED
       </h2>
-      <div className="bg-white flex justify-around shadow-lg rounded-lg overflow-hidden w-[80%] p-4 md:p-4 flex-col md:flex-row">
+      <div className="bg-white rounded-lg shadow-lg p-6 flex flex-col sm:flex-row items-center space-y-6 sm:space-y-0 sm:space-x-6">
         <img
           src={travel.image}
           alt="Viaje"
@@ -59,7 +59,7 @@ const TravelSection = () => {
             {timeLeft.seconds}s
           </div>
           {/* Descripción */}
-          <p className="text-turquesa80 text-l md:text-md">
+          <p className="text-turquesa80 text-l md:text-md mb-6">
             {travel.description}
           </p>
           <button className="bg-principal text-white py-2 px-10 md:w-auto w-full rounded-lg hover:bg-turquesa80 transition-all duration-300 mt-auto"

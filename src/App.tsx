@@ -10,7 +10,7 @@ import NotFoundPage from './pages/404';
 import TravelSection from './pages/sections/travels';
 import Gallery from './pages/gallery';
 import EventGallery from './pages/eventGallery';
-import TravelsDetails from './pages/travelsGallery';
+import TravelsDetails from './pages/travelsDetails';
 import AboutUsSection from './pages/sections/aboutUs';
 
 function App() {
