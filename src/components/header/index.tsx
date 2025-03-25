@@ -100,7 +100,7 @@ const Header = () => {
 
           {/* Items del menú */}
           <ul className="flex flex-col items-end text-right space-y-6 p-8 font-montserrat text-2xl gap-8 mr-8">
-            <li>
+            <li className="w-max">
               <span
                 onClick={() => handleNavigation("upcoming-events")}
                 className="text-gray-800 hover:text-principal transition cursor-pointer"
@@ -109,7 +109,7 @@ const Header = () => {
               </span>
             </li>
 
-            <li>
+            <li className="w-max">
               <span
                 onClick={() => handleNavigation("travels")}
                 className="text-gray-800 hover:text-principal transition cursor-pointer"
@@ -118,7 +118,7 @@ const Header = () => {
               </span>
             </li>
 
-            <li>
+            <li className="w-max">
               <span
                 onClick={() => handleNavigation("past-events")}
                 className="text-gray-800 hover:text-principal transition cursor-pointer"
@@ -127,13 +127,13 @@ const Header = () => {
               </span>
             </li>
 
-            <li>
+            <li className="w-max">
               <Link to="/gallery" className="text-gray-800 hover:text-principal transition cursor-pointer" onClick={() => setMenuOpen(false)}>
                 Galería
               </Link>
             </li>
 
-            <li>
+            <li className="w-max">
               <span
                 onClick={() => handleNavigation("contact")}
                 className="text-gray-800 hover:text-principal transition cursor-pointer"
