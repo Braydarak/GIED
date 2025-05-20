@@ -20,7 +20,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="bg-turquesa10 text-black py-16 px-8 scroll-mt-24" id="contact">
+    <section className="bg-turquesa10 snap-start text-black py-16 px-8 scroll-mt-24" id="contact">
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="text-3xl font-panton text-principal font-bold mb-8">Contáctanos</h2>
         <p className="text-lg mb-8 font-montserrat">

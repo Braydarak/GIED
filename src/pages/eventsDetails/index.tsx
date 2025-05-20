@@ -3,9 +3,8 @@ import { useState } from "react";
 import upcoming_events from "../../data/events.json";
 import { formatDate, ScrollToTop } from "../../utils/functions";
 
-
 const EventsDetails = () => {
-  ScrollToTop()
+  ScrollToTop();
   const { id } = useParams<{ id: string }>();
   const event = upcoming_events.events.find((e) => e.id === Number(id));
 
@@ -29,7 +28,9 @@ const EventsDetails = () => {
   if (!event) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-turquesa10">
-        <h1 className="text-2xl font-bold text-red-500">Evento no encontrado</h1>
+        <h1 className="text-2xl font-bold text-red-500">
+          Evento no encontrado
+        </h1>
       </div>
     );
   }
@@ -51,22 +52,34 @@ const EventsDetails = () => {
           alt={event.title}
           className="md:w-1/2 h-auto object-cover aspect-3/2"
           loading="lazy"
+          data-view-transition-name={`event-image-${event.id}`}
         />
         <div className="p-8 md:w-1/2">
           <h2 className="text-2xl text-turquesa80 font-semibold mb-4 font-panton">
             Detalles del Evento
           </h2>
-          <p className="mb-4 text-turquesa65 font-montserrat">{formatDate(event.date)}</p>
-          <p className="mb-4 text-turquesa80 font-montserrat">{event.location}</p>
-          <p className="mb-4 font-montserrat text-principal">{event.long_description}</p>
+          <p className="mb-4 text-turquesa65 font-montserrat">
+            {formatDate(event.date)}
+          </p>
+          <p className="mb-4 text-turquesa80 font-montserrat">
+            {event.location}
+          </p>
+          <p className="mb-4 font-montserrat text-principal">
+            {event.long_description}
+          </p>
         </div>
       </div>
 
       <div className="bg-white shadow-lg rounded-lg p-8 max-w-6xl mx-auto mt-12">
-        <h2 className="text-2xl font-semibold mb-6 font-panton text-principal">Inscríbete ahora</h2>
+        <h2 className="text-2xl font-semibold mb-6 font-panton text-principal">
+          Inscríbete ahora
+        </h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="name">
+            <label
+              className="block text-sm font-medium text-gray-700 mb-1"
+              htmlFor="name"
+            >
               Nombre completo
             </label>
             <input
@@ -80,7 +93,10 @@ const EventsDetails = () => {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="email">
+            <label
+              className="block text-sm font-medium text-gray-700 mb-1"
+              htmlFor="email"
+            >
               Correo electrónico
             </label>
             <input
@@ -94,7 +110,10 @@ const EventsDetails = () => {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="phone">
+            <label
+              className="block text-sm font-medium text-gray-700 mb-1"
+              htmlFor="phone"
+            >
               Teléfono
             </label>
             <input
