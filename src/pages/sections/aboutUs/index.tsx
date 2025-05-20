@@ -1,6 +1,7 @@
+
 const AboutUsSection = () => {
   return (
-    <section className="bg-turquesa10 text-black py-16 px-8 scroll-mt-24" id="about">
+    <section className="bg-turquesa10 text-black py-16 px-8 scroll-mt-24 snap-start" id="about">
       <div className="max-w-6xl mx-auto text-center min-h-96 flex flex-col justify-center">
         <h2 className="text-4xl font-panton text-principal font-bold mb-8">
           ¿Qué es GIED?

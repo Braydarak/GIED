@@ -1,5 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import Lenis from '@studio-freight/lenis';
+import gsap from 'gsap';
 import logo from "../../assets/images/LOGOTIPO GIED VERSION 2.webp";
 import InstagramLogo from "../instagramLogo";
 import MenuIcon from "../menuIcon";
@@ -12,6 +14,9 @@ const Header = () => {
   const [instagramHovered, setInstagramHovered] = useState(false);
   const [menuHovered, setMenuHovered] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const lenisRef = useRef<Lenis | null>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   const isGalleryPage = /^\/gallery(?:\/\d+)?$/.test(location.pathname);
   const isEventDetailsPage = /^\/event-details(?:\/\d+)?$/.test(location.pathname);
@@ -27,6 +32,53 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    lenisRef.current = new Lenis({});
+
+    function raf(time: number) {
+      lenisRef.current?.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => lenisRef.current?.destroy();
+  }, []);
+
+  useEffect(() => {
+    const menuEl = menuRef.current;
+    if (!menuEl) return;
+
+    const isDesktop = window.innerWidth >= 768;
+    const targetWidth = isDesktop ? '33.3333%' : '100%';
+
+    if (menuOpen) {
+      gsap.set(menuEl, {
+        display: 'block',
+        transformOrigin: 'right',
+        scaleX: 0,
+        opacity: 0,
+        width: targetWidth,
+      });
+      gsap.to(menuEl, {
+        scaleX: 1,
+        opacity: 1,
+        duration: 0.5,
+        ease: 'power3.out'
+      });
+    } else {
+      gsap.to(menuEl, {
+        scaleX: 0,
+        opacity: 0,
+        duration: 0.4,
+        ease: 'power3.in',
+        onComplete: () => {
+          gsap.set(menuEl, { display: 'none' });
+        }
+      });
+    }
+  }, [menuOpen]);
+
   const handleNavigation = (sectionId: string) => {
     if (location.pathname !== "/") {
       navigate("/");
@@ -41,10 +93,10 @@ const Header = () => {
 
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
-    if (section) {
+    if (section && lenisRef.current) {
       const headerOffset = 80;
       const sectionPosition = section.getBoundingClientRect().top + window.scrollY;
-      window.scrollTo({ top: sectionPosition - headerOffset, behavior: "smooth" });
+      lenisRef.current.scrollTo(sectionPosition - headerOffset, { duration: 1.2 });
     }
   };
 
@@ -55,7 +107,21 @@ const Header = () => {
       }`}
     >
       {/* Logo de GIED */}
-      <Link to="/" className="cursor-pointer" onClick={() => handleNavigation("hero")}>
+      <Link
+        to="/"
+        className="cursor-pointer"
+        onClick={() => {
+          if (location.pathname !== "/") {
+            navigate("/");
+            setTimeout(() => {
+              lenisRef.current?.scrollTo(0);
+            }, 300);
+          } else {
+            lenisRef.current?.scrollTo(0);
+          }
+          setMenuOpen(false);
+        }}
+      >
         <img src={logo} alt="GIED Logo" className="h-12 md:h-24 transition-all duration-300 w-auto aspect-3/2" />
       </Link>
 
@@ -86,7 +152,8 @@ const Header = () => {
 
         {/* Contenido del menú */}
         <nav
-          className={`fixed top-0 right-0 h-full ${menuOpen ? "w-full md:w-1/3" : "w-0"} bg-turquesa25 shadow-lg transition-all duration-300 overflow-hidden`}
+          ref={menuRef}
+          className="fixed top-0 right-0 h-full bg-turquesa25 shadow-lg overflow-hidden origin-right scale-x-0"
           style={{
             boxShadow: "rgba(0, 0, 0, 0.2) -5px 0px 15px",
           }}

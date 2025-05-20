@@ -1,13 +1,49 @@
-import { motion } from "framer-motion";
 import past_events from "../../../data/events.json";
-import { filterPastEvents, formatDate, isMobile } from "../../../utils/functions";
-import { memo } from "react";
+import { filterPastEvents, formatDate } from "../../../utils/functions";
+import { memo, useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import GiedLogo from '../../../assets/images/LOGOTIPO GIED VERSION 2.webp';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const PastEventsPage = () => {
   const pastEvents = filterPastEvents(past_events.events);
+  const eventRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    gsap.set(eventRefs.current, { opacity: 1 });
+
+    eventRefs.current.forEach((el, index) => {
+      if (!el) return;
+
+      gsap.fromTo(el,
+        {
+          opacity: 0,
+          x: index % 2 === 0 ? 100 : -100,
+        },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    });
+
+    // Cleanup
+    return () => {
+      ScrollTrigger.getAll().forEach(st => st.kill());
+    };
+  }, [pastEvents]);
 
   return (
-    <section className="bg-white text-white min-h-screen pt-20 pb-20 scroll-mt-24" id="past-events">
+    <section className="bg-white snap-start text-white min-h-screen pt-20 pb-20 scroll-mt-24" id="past-events">
       <h1 className="text-4xl text-center font-panton text-principal font-bold mb-12">
         Eventos Pasados
       </h1>
@@ -15,22 +51,12 @@ const PastEventsPage = () => {
       <div className="max-w-4xl mx-auto space-y-12 md:pl-0 pl-[10px] md:pr-0 pr-[10px]">
         {pastEvents.length > 0 ? (
           pastEvents.map((event, index) => (
-            <motion.div
+            <div
               key={event.id}
-              className="bg-principal rounded-lg shadow-lg p-6 flex flex-col sm:flex-row items-center space-y-6 sm:space-y-0 sm:space-x-6"
-              initial={{
-                opacity: 0,
-                x: isMobile
-                  ? index % 2 === 0
-                    ? -100
-                    : 100
-                  : index % 2 === 0
-                  ? -600
-                  : 600,
+              ref={(el) => {
+                eventRefs.current[index] = el;
               }}
-              whileInView={{ opacity: 1, x: 0 }} // Animación al estar en viewport
-              viewport={{ once: true, amount: 0.3 }} // Solo animar una vez
-              transition={{ duration: 1.0, delay: index * 0.1 }} // Suavidad y cascada
+              className="bg-principal rounded-lg shadow-lg p-6 flex flex-col sm:flex-row items-center space-y-6 sm:space-y-0 sm:space-x-6"
             >
               <picture>
                 <img
@@ -54,12 +80,15 @@ const PastEventsPage = () => {
                   {event.description}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))
         ) : (
-          <p className="text-center text-lg text-white">
-            No hay eventos pasados.
-          </p>
+          <div className="flex flex-col items-center justify-center">
+            <span className="text-center text-gray-500 text-2xl mt-10 mb-10 font-montserrat">
+              No hay eventos disponibles en este momento <p className="mt-5">Puedes seguirnos en <a target="_blank" href="https://www.instagram.com/gied.eventos/" className=" font-panton font-bold text-principal cursor-pointer ">INSTAGRAM</a> para mantenerte al tanto de nuestras novedades</p> 
+            </span>
+            <img src={GiedLogo} className="w-28" />
+          </div>
         )}
       </div>
     </section>
