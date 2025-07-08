@@ -58,10 +58,10 @@ const TravelsDetails = () => {
           <p className="mb-4 text-turquesa65 font-montserrat">{formatDate(travel.date)}</p>
           <p className="mb-4 font-montserrat text-principal">{travel.long_description}</p>
           <p className="mb-4 text-turquesa80 font-montserrat">
-            Salida desde: {travel.departure.city} ({travel.departure.time})
+            Salida desde {travel.departure.city} ({travel.departure.time})
           </p>
           <p className="mb-4 text-turquesa80 font-montserrat">
-            Llegada a: {travel.arrival.city} ({travel.arrival.time})
+            Llegada a {travel.arrival.city} ({travel.arrival.time})
           </p>
         </div>
       </div>

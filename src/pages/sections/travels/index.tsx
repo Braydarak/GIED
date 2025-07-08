@@ -41,6 +41,8 @@ const TravelSection = () => {
     timeLeft.minutes === 0 &&
     timeLeft.seconds === 0;
 
+  if (isTravelStarted) return null;
+
   return (
     <section
       className="max-w-4xl snap-start mx-auto space-y-12 px-4 justify-center items-center flex flex-col pb-10 text-center"
@@ -70,7 +72,7 @@ const TravelSection = () => {
               {travel.title}
             </h2>
             {/* Cuenta atrás */}
-            <div className="text-2xl md:text-4xl font-bold text-principal mb-4 uppercase">
+            <div className="text-2xl md:text-3xl font-bold text-principal mb-4 uppercase">
               {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m{" "}
               {timeLeft.seconds}s
             </div>
