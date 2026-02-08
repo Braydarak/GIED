@@ -23,9 +23,25 @@ const ContactSection = () => {
     <section className="bg-turquesa10 snap-start text-black py-16 px-8 scroll-mt-24" id="contact">
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="text-3xl font-panton text-principal font-bold mb-8">Contáctanos</h2>
+        
+        <div className="mb-12 grid md:grid-cols-3 gap-6 text-center">
+          <div className="p-4 bg-white rounded-lg shadow-sm">
+            <h3 className="font-bold text-principal mb-2">Email</h3>
+            <p className="font-montserrat">info@giedesports.com</p>
+          </div>
+          <div className="p-4 bg-white rounded-lg shadow-sm">
+            <h3 className="font-bold text-principal mb-2">Teléfono</h3>
+            <p className="font-montserrat">+34 600 000 000</p>
+          </div>
+          <div className="p-4 bg-white rounded-lg shadow-sm">
+            <h3 className="font-bold text-principal mb-2">Ubicación</h3>
+            <p className="font-montserrat">Islas Baleares, España</p>
+          </div>
+        </div>
+
         <p className="text-lg mb-8 font-montserrat">
           ¿Tienes alguna duda o pregunta?{" "}
-          <p>Déjanos un mensaje y nos pondremos en contacto contigo.</p>
+          <span className="block">Déjanos un mensaje y nos pondremos en contacto contigo.</span>
         </p>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>

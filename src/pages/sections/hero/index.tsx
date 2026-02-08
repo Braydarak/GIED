@@ -1,14 +1,14 @@
 // import { motion } from "framer-motion";
-import bg from '../../../assets/images/bg-image.avif';
+import bg from "../../../assets/images/bg-image.avif";
 import { useEffect, useRef, useState } from "react";
 import { isMobile, ScrollToTop } from "../../../utils/functions";
 
 const HeroSection = () => {
-  ScrollToTop()
+  ScrollToTop();
 
   useEffect(() => {
     const handleResize = () => isMobile;
-    handleResize(); 
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -24,7 +24,7 @@ const HeroSection = () => {
           observer.disconnect();
         }
       },
-      { threshold: 0.6 }
+      { threshold: 0.6 },
     );
 
     if (buttonRef.current) {
@@ -37,9 +37,9 @@ const HeroSection = () => {
   }, []);
 
   const scrollToSection = () => {
-    const section = document.getElementById('upcoming-events');
+    const section = document.getElementById("upcoming-events");
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      section.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -57,8 +57,8 @@ const HeroSection = () => {
           className="text-5xl font-panton font-bold text-principal mb-4 sm:text-4xl md:text-5xl"
           style={{
             opacity: 1,
-            transform: 'translateX(0)',
-            transition: 'opacity 1s ease-out, transform 1s ease-out',
+            transform: "translateX(0)",
+            transition: "opacity 1s ease-out, transform 1s ease-out",
           }}
         >
           ¡Bienvenidos a GIED!
@@ -67,11 +67,12 @@ const HeroSection = () => {
           className="text-xl font-panton text-turquesa80 mb-8 sm:text-lg sm:px-6 md:max-w-xl mx-auto"
           style={{
             opacity: 1,
-            transform: 'translateX(0)',
-            transition: 'opacity 1s ease-out 0.2s, transform 1s ease-out 0.2s',
+            transform: "translateX(0)",
+            transition: "opacity 1s ease-out 0.2s, transform 1s ease-out 0.2s",
           }}
         >
-          Descubre los mejores eventos deportivos y mantente al día con nuestras actividades deportivas exclusivas.
+          Elevamos el nivel de los eventos deportivos en Baleares con una
+          gestión integral, moderna y centrada en las personas.
         </p>
 
         {/* Botón CTA */}
@@ -82,10 +83,10 @@ const HeroSection = () => {
           className={`
             bg-principal text-white text-lg py-3 px-10 rounded-lg hover:bg-turquesa80
             transition-all ease-in-out duration-700 sm:py-2 sm:px-6
-            transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}
+            transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}
           `}
         >
-          Ver Próximos Eventos
+          Descubre más sobre nosotros
         </button>
       </div>
     </section>

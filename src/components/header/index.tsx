@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import Lenis from '@studio-freight/lenis';
-import gsap from 'gsap';
+import gsap from "gsap";
 import logo from "../../assets/images/LOGOTIPO GIED VERSION 2.webp";
 import InstagramLogo from "../instagramLogo";
 import MenuIcon from "../menuIcon";
 import CloseIcon from "../closeIcon";
+import { useScroll } from "../../context/ScrollContext";
 
 const Header = () => {
   const location = useLocation();
@@ -15,14 +15,22 @@ const Header = () => {
   const [menuHovered, setMenuHovered] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const lenisRef = useRef<Lenis | null>(null);
+  const { lenis } = useScroll();
   const menuRef = useRef<HTMLDivElement>(null);
+  const overlayRef = useRef<HTMLDivElement>(null);
 
   const isGalleryPage = /^\/gallery(?:\/\d+)?$/.test(location.pathname);
-  const isEventDetailsPage = /^\/event-details(?:\/\d+)?$/.test(location.pathname);
+  const isEventDetailsPage = /^\/event-details(?:\/\d+)?$/.test(
+    location.pathname,
+  );
   const isTravelPage = /^\/travel(?:\/\d+)?$/.test(location.pathname);
 
-  const defaultColor = isEventDetailsPage || isGalleryPage || isTravelPage ? "#000000" : scrolled ? "#000000" : "#ffffff";
+  const defaultColor =
+    isEventDetailsPage || isGalleryPage || isTravelPage
+      ? "#000000"
+      : scrolled
+        ? "#000000"
+        : "#ffffff";
   const instagramFill = instagramHovered ? "#00a59e" : defaultColor;
   const menuFill = menuHovered ? "#00a59e" : defaultColor;
 
@@ -33,70 +41,142 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    lenisRef.current = new Lenis({});
-
-    function raf(time: number) {
-      lenisRef.current?.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-
-    return () => lenisRef.current?.destroy();
-  }, []);
-
-  useEffect(() => {
     const menuEl = menuRef.current;
-    if (!menuEl) return;
+    const overlayEl = overlayRef.current;
+    if (!menuEl || !overlayEl) return;
 
     const isDesktop = window.innerWidth >= 768;
-    const targetWidth = isDesktop ? '33.3333%' : '100%';
+    const targetWidth = isDesktop ? "33.3333%" : "100%";
+    const listItems = menuEl.querySelectorAll(".menu-item-container");
+    const footerItems = menuEl.querySelectorAll(".menu-footer");
 
     if (menuOpen) {
+      // Disable scroll
+      document.body.style.overflow = "hidden";
+      if (lenis) lenis.stop();
+
+      const tl = gsap.timeline();
+
       gsap.set(menuEl, {
-        display: 'block',
-        transformOrigin: 'right',
-        scaleX: 0,
-        opacity: 0,
+        display: "block",
+        x: "100%", // Start completely off-screen to the right
+        opacity: 1, // Keep opacity 1 for clean slide
         width: targetWidth,
+        scaleX: 1, // Reset scale
       });
-      gsap.to(menuEl, {
-        scaleX: 1,
+
+      gsap.set(overlayEl, {
+        display: "block",
+        opacity: 0,
+      });
+
+      // Set initial state for list items (start from right)
+      gsap.set(listItems, {
+        x: 100, // Increased distance for more dynamic entry
+        opacity: 0,
+      });
+
+      // Set initial state for footer items (start from bottom)
+      gsap.set(footerItems, {
+        y: 20,
+        opacity: 0,
+      });
+
+      // Animate overlay
+      gsap.to(overlayEl, {
         opacity: 1,
         duration: 0.5,
-        ease: 'power3.out'
+        ease: "power2.out",
       });
+
+      tl.to(menuEl, {
+        x: "0%",
+        duration: 0.8, // Slightly longer for smoothness
+        ease: "expo.out", // Elegant deceleration
+      })
+        .to(
+          listItems,
+          {
+            x: 0,
+            opacity: 1,
+            duration: 0.6,
+            stagger: 0.08,
+            ease: "power3.out",
+          },
+          "-=0.4",
+        )
+        .to(
+          footerItems,
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.5,
+            ease: "power2.out",
+          },
+          "-=0.2",
+        ); // Overlap significantly with menu opening
     } else {
-      gsap.to(menuEl, {
-        scaleX: 0,
+      // Enable scroll
+      document.body.style.overflow = "";
+      if (lenis) lenis.start();
+
+      // Animate overlay out
+      gsap.to(overlayEl, {
         opacity: 0,
-        duration: 0.4,
-        ease: 'power3.in',
+        duration: 0.5,
+        ease: "power2.in",
         onComplete: () => {
-          gsap.set(menuEl, { display: 'none' });
-        }
+          gsap.set(overlayEl, { display: "none" });
+        },
+      });
+
+      gsap.to(menuEl, {
+        x: "100%", // Slide out to the right
+        duration: 0.6,
+        ease: "expo.in", // Accelerate out
+        onComplete: () => {
+          gsap.set(menuEl, { display: "none" });
+        },
       });
     }
-  }, [menuOpen]);
+  }, [lenis, menuOpen]);
 
   const handleNavigation = (sectionId: string) => {
+    setMenuOpen(false);
+
     if (location.pathname !== "/") {
       navigate("/");
       setTimeout(() => {
         scrollToSection(sectionId);
-      }, 300);
+      }, 700); // Increased delay to account for navigation + menu closing
     } else {
-      scrollToSection(sectionId);
+      // If we are already home, just wait for menu to close slightly
+      setTimeout(() => {
+        scrollToSection(sectionId);
+      }, 100);
     }
-    setMenuOpen(false);
   };
 
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
-    if (section && lenisRef.current) {
-      const headerOffset = 80;
-      const sectionPosition = section.getBoundingClientRect().top + window.scrollY;
-      lenisRef.current.scrollTo(sectionPosition - headerOffset, { duration: 1.2 });
+    if (section) {
+      const headerOffset = 120;
+      const sectionPosition =
+        section.getBoundingClientRect().top + window.scrollY;
+
+      if (lenis) {
+        lenis.start(); // Ensure lenis is started
+        lenis.scrollTo(sectionPosition - headerOffset, {
+          duration: 1.2,
+          force: true, // Force scroll even if stopped (if supported)
+        });
+      } else {
+        // Fallback to native scroll
+        window.scrollTo({
+          top: sectionPosition - headerOffset,
+          behavior: "smooth",
+        });
+      }
     }
   };
 
@@ -114,22 +194,34 @@ const Header = () => {
           if (location.pathname !== "/") {
             navigate("/");
             setTimeout(() => {
-              lenisRef.current?.scrollTo(0);
+              lenis?.scrollTo(0);
             }, 300);
           } else {
-            lenisRef.current?.scrollTo(0);
+            lenis?.scrollTo(0);
           }
           setMenuOpen(false);
         }}
       >
-        <img src={logo} alt="GIED Logo" className="h-12 md:h-24 transition-all duration-300 w-auto aspect-3/2" />
+        <img
+          src={logo}
+          alt="GIED Logo"
+          className="h-12 md:h-24 transition-all duration-300 w-auto aspect-3/2"
+        />
       </Link>
 
       {/* Menú Hamburguesa */}
-      <div className="relative flex items-center space-x-8">
+      <div className="relative flex items-center space-x-8 z-50">
+        {/* Overlay para cerrar el menú */}
+        <div
+          ref={overlayRef}
+          className="fixed inset-0 bg-black/50 z-40 hidden"
+          onClick={() => setMenuOpen(false)}
+          aria-hidden="true"
+        />
+
         {/* Instagram */}
         <a
-          href="https://www.instagram.com/gied.eventos/"
+          href="https://www.instagram.com/gied.esports/"
           target="_blank"
           rel="noopener noreferrer"
           className="hidden md:block cursor-pointer"
@@ -146,6 +238,7 @@ const Header = () => {
           aria-label="Abrir menú"
           onMouseEnter={() => setMenuHovered(true)}
           onMouseLeave={() => setMenuHovered(false)}
+          className="z-50 relative"
         >
           <MenuIcon color={menuFill} />
         </button>
@@ -153,7 +246,7 @@ const Header = () => {
         {/* Contenido del menú */}
         <nav
           ref={menuRef}
-          className="fixed top-0 right-0 h-full bg-turquesa25 shadow-lg overflow-hidden origin-right scale-x-0"
+          className="fixed top-0 right-0 h-full bg-turquesa25 shadow-lg overflow-hidden translate-x-full z-50"
           style={{
             boxShadow: "rgba(0, 0, 0, 0.2) -5px 0px 15px",
           }}
@@ -166,56 +259,63 @@ const Header = () => {
           </div>
 
           {/* Items del menú */}
-          <ul className="flex flex-col items-end text-right space-y-6 p-8 font-montserrat text-2xl gap-8 mr-8">
-            <li className="w-max">
+          <ul className="flex flex-col items-stretch text-right space-y-0 px-8 pt-4 pb-0 font-montserrat text-2xl h-full">
+            <li className="menu-item-container w-full border-b border-gray-300 py-6">
               <span
-                onClick={() => handleNavigation("upcoming-events")}
-                className="text-gray-800 hover:text-principal transition cursor-pointer"
+                onClick={() => handleNavigation("about")}
+                className="text-gray-800 hover:text-principal transition cursor-pointer block w-full"
               >
-                Próximos Eventos
+                ¿Que es Gied?
+              </span>
+            </li>
+            <li className="menu-item-container w-full border-b border-gray-300 py-6">
+              <span
+                onClick={() => handleNavigation("process")}
+                className="text-gray-800 hover:text-principal transition cursor-pointer block w-full"
+              >
+                Nuestros Proceso
               </span>
             </li>
 
-            <li className="w-max">
+            <li className="menu-item-container w-full border-b border-gray-300 py-6">
               <span
-                onClick={() => handleNavigation("travels")}
-                className="text-gray-800 hover:text-principal transition cursor-pointer"
+                onClick={() => handleNavigation("services")}
+                className="text-gray-800 hover:text-principal transition cursor-pointer block w-full"
               >
-                Viajes
+                Nuestros Servicios
               </span>
             </li>
-
-            <li className="w-max">
-              <span
-                onClick={() => handleNavigation("past-events")}
-                className="text-gray-800 hover:text-principal transition cursor-pointer"
-              >
-                Eventos Pasados
-              </span>
-            </li>
-
-            <li className="w-max">
-              <Link to="/gallery" className="text-gray-800 hover:text-principal transition cursor-pointer" onClick={() => setMenuOpen(false)}>
-                Galería
-              </Link>
-            </li>
-
-            <li className="w-max">
+            <li className="menu-item-container w-full border-b border-gray-300 py-6">
               <span
                 onClick={() => handleNavigation("contact")}
-                className="text-gray-800 hover:text-principal transition cursor-pointer"
+                className="text-gray-800 hover:text-principal transition cursor-pointer block w-full"
               >
                 Contáctanos
               </span>
             </li>
+
+            {/* Espaciador flexible para empujar el footer hacia abajo */}
+            <li className="flex-grow"></li>
+
+            {/* Footer del menú */}
+            <li className="menu-footer pb-8 pt-4">
+              <div className="flex flex-col items-end gap-2">
+                <div className="flex items-center gap-4 mt-2">
+                  <a
+                    href="https://www.instagram.com/gied.esports/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    className="opacity-70 hover:opacity-100 transition-opacity"
+                  >
+                    <InstagramLogo width="24" height="24" fill="#000000" />
+                  </a>
+                </div>
+              </div>
+            </li>
           </ul>
 
-          {/* Instagram en mobile */}
-          <div className="md:hidden absolute bottom-4 w-full flex justify-end items-center pr-8 mb-8">
-            <a href="https://www.instagram.com/gied.eventos/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <InstagramLogo width="40" height="40" fill="#000000" />
-            </a>
-          </div>
+          {/* Eliminamos el footer mobile anterior ya que ahora está integrado */}
         </nav>
       </div>
     </header>
