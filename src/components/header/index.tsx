@@ -6,6 +6,7 @@ import InstagramLogo from "../instagramLogo";
 import MenuIcon from "../menuIcon";
 import CloseIcon from "../closeIcon";
 import { useScroll } from "../../context/ScrollContext";
+import LanguageDropdown from "../languajeDropdown";
 
 const Header = () => {
   const location = useLocation();
@@ -210,7 +211,7 @@ const Header = () => {
       </Link>
 
       {/* Menú Hamburguesa */}
-      <div className="relative flex items-center space-x-8 z-50">
+      <div className="relative flex items-center space-x-2 md:space-x-8 z-50">
         {/* Overlay para cerrar el menú */}
         <div
           ref={overlayRef}
@@ -218,6 +219,8 @@ const Header = () => {
           onClick={() => setMenuOpen(false)}
           aria-hidden="true"
         />
+
+        <LanguageDropdown scrolled={scrolled} />
 
         {/* Instagram */}
         <a
