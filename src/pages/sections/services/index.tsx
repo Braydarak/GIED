@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   FaLightbulb,
   FaChess,
@@ -5,6 +6,8 @@ import {
   FaUsersCog,
   FaPlay,
   FaChartLine,
+  FaChevronDown,
+  FaChevronUp,
 } from "react-icons/fa";
 
 const services = [
@@ -61,6 +64,8 @@ const services = [
 ];
 
 const ServicesSection = () => {
+  const [showAllServices, setShowAllServices] = useState(false);
+
   const processSteps = [
     {
       icon: <FaLightbulb />,
@@ -94,24 +99,26 @@ const ServicesSection = () => {
     },
   ];
 
+  const visibleServices = showAllServices ? services : services.slice(0, 6);
+
   return (
-    <section className="bg-white text-black py-20 px-8 snap-start">
-      <div className="max-w-7xl mx-auto flex flex-col gap-24">
+    <section className="bg-white text-black py-16 md:py-24 px-4 md:px-8 lg:px-12 snap-start">
+      <div className="max-w-[1440px] mx-auto flex flex-col gap-16 md:gap-24">
         {/* Proceso */}
         <div
           id="process"
-          className="bg-turquesa10 p-10 md:p-14 rounded-3xl shadow-lg scroll-mt-24"
+          className="bg-turquesa10 p-6 md:p-14 rounded-3xl shadow-lg scroll-mt-24"
         >
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-panton text-principal font-bold mb-4">
+          <div className="text-center mb-10 md:mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-panton text-principal font-bold mb-4">
               Nuestro Proceso
             </h2>
-            <p className="font-montserrat text-gray-500">
+            <p className="font-montserrat text-gray-500 text-sm md:text-lg">
               Cómo llevamos tu idea a la realidad
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 relative">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-4 gap-y-8 md:gap-6 relative">
             {/* Connecting line for desktop */}
             <div className="hidden lg:block absolute top-12 left-0 w-full h-1 bg-gray-200 -z-0"></div>
 
@@ -120,16 +127,16 @@ const ServicesSection = () => {
                 key={idx}
                 className="relative flex flex-col items-center text-center z-10 group"
               >
-                <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center text-principal text-3xl mb-6 border-4 border-turquesa10 shadow-md group-hover:bg-principal group-hover:text-white transition-colors duration-300">
+                <div className="w-20 h-20 md:w-28 md:h-28 bg-white rounded-full flex items-center justify-center text-principal text-2xl md:text-4xl mb-4 md:mb-6 border-4 border-turquesa10 shadow-md group-hover:bg-principal group-hover:text-white transition-colors duration-300">
                   {step.icon}
                 </div>
-                <div className="bg-turquesa80 text-white rounded-full px-3 py-1 text-xs font-bold mb-2">
+                <div className="bg-turquesa80 text-white rounded-full px-3 py-1 text-[10px] md:text-sm font-bold mb-2">
                   Paso {idx + 1}
                 </div>
-                <h4 className="text-lg font-bold text-principal mb-2 font-panton leading-tight h-12 flex items-center justify-center">
+                <h4 className="text-base md:text-xl lg:text-2xl font-bold text-principal mb-3 font-panton leading-tight h-10 md:h-16 flex items-center justify-center w-full px-1">
                   {step.title}
                 </h4>
-                <p className="font-montserrat text-xs text-gray-500 hidden md:block">
+                <p className="font-montserrat text-xs md:text-sm lg:text-base text-gray-500 hidden md:block px-1 leading-snug">
                   {step.desc}
                 </p>
               </div>
@@ -139,29 +146,44 @@ const ServicesSection = () => {
 
         {/* Servicios */}
         <div id="services" className="text-center scroll-mt-24">
-          <h2 className="text-4xl font-panton text-principal font-bold mb-12">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-panton text-principal font-bold mb-8 md:mb-12">
             Nuestros Servicios
           </h2>
-          <p className="text-lg font-montserrat mb-12 max-w-3xl mx-auto text-gray-600">
+          <p className="text-base md:text-lg font-montserrat mb-10 md:mb-12 max-w-3xl mx-auto text-gray-600 px-2">
             En GIED Esports trabajamos con una amplia variedad de formatos,
             adaptándonos siempre a las necesidades del cliente y garantizando la
             máxima profesionalidad.
           </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
-            {services.map((service, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 text-left">
+            {visibleServices.map((service, index) => (
               <div
                 key={index}
-                className="bg-white border border-gray-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+                className="bg-white border border-gray-100 p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
               >
-                <h3 className="text-xl font-bold font-panton text-principal mb-4 border-b-2 border-turquesa10 pb-2 inline-block">
+                <h3 className="text-lg md:text-xl font-bold font-panton text-principal mb-3 md:mb-4 border-b-2 border-turquesa10 pb-2 inline-block">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 font-montserrat leading-relaxed text-sm">
+                <p className="text-gray-600 font-montserrat leading-relaxed text-sm md:text-base">
                   {service.description}
                 </p>
               </div>
             ))}
           </div>
+          {services.length > 6 && (
+            <div className="flex justify-center mt-12">
+              <button
+                onClick={() => setShowAllServices(!showAllServices)}
+                className="flex items-center gap-2 px-8 py-3 bg-white text-principal border-2 border-principal rounded-full font-bold font-panton hover:bg-principal hover:text-white transition-all duration-300 shadow-md group"
+              >
+                {showAllServices ? "Mostrar menos" : "Mostrar más"}
+                {showAllServices ? (
+                  <FaChevronUp className="group-hover:-translate-y-1 transition-transform duration-300" />
+                ) : (
+                  <FaChevronDown className="group-hover:translate-y-1 transition-transform duration-300" />
+                )}
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </section>

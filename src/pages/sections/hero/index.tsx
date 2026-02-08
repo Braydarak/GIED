@@ -54,7 +54,7 @@ const HeroSection = () => {
       {/* Contenido */}
       <div className="relative z-10 text-center">
         <h1
-          className="text-5xl font-panton font-bold text-principal mb-4 sm:text-4xl md:text-5xl"
+          className="text-5xl font-panton font-bold text-principal mb-4 sm:text-4xl md:text-6xl"
           style={{
             opacity: 1,
             transform: "translateX(0)",
@@ -64,7 +64,7 @@ const HeroSection = () => {
           ¡Bienvenidos a GIED!
         </h1>
         <p
-          className="text-xl font-panton text-turquesa80 mb-8 sm:text-lg sm:px-6 md:max-w-xl mx-auto"
+          className="text-xl font-panton text-turquesa80 mb-8 sm:text-xl sm:px-6 md:max-w-xl mx-auto"
           style={{
             opacity: 1,
             transform: "translateX(0)",
@@ -81,8 +81,8 @@ const HeroSection = () => {
           onClick={scrollToSection}
           aria-label={`Presionar para ver los próximos eventos`}
           className={`
-            bg-principal text-white text-lg py-3 px-10 rounded-lg hover:bg-turquesa80
-            transition-all ease-in-out duration-700 sm:py-2 sm:px-6
+            bg-principal text-white text-lg sm:text-xl py-3 px-10 rounded-lg hover:bg-turquesa80
+            transition-all ease-in-out duration-700 sm:py-4 sm:px-15
             transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}
           `}
         >
