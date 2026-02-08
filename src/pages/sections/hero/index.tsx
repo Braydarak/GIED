@@ -37,7 +37,7 @@ const HeroSection = () => {
   }, []);
 
   const scrollToSection = () => {
-    const section = document.getElementById("upcoming-events");
+    const section = document.getElementById("about");
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
@@ -79,7 +79,7 @@ const HeroSection = () => {
         <button
           ref={buttonRef}
           onClick={scrollToSection}
-          aria-label={`Presionar para ver los próximos eventos`}
+          aria-label={`Presiona para conocer más sobre nosotros`}
           className={`
             bg-principal text-white text-lg sm:text-xl py-3 px-10 rounded-lg hover:bg-turquesa80
             transition-all ease-in-out duration-700 sm:py-4 sm:px-15
