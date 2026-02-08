@@ -2,7 +2,6 @@ import GiedLogo from "../../assets/images/LOGOTIPO GIED VERSION 2.webp";
 import { useTranslation } from "react-i18next";
 import {
   FaInstagram,
-  FaLinkedin,
   FaEnvelope,
   FaPhoneAlt,
   FaMapMarkerAlt,
@@ -97,15 +96,6 @@ const Footer = () => {
                 aria-label="Instagram"
               >
                 <FaInstagram size={20} />
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-principal hover:bg-principal hover:text-white transition-all duration-300"
-                aria-label="LinkedIn"
-              >
-                <FaLinkedin size={20} />
               </a>
             </div>
           </div>
