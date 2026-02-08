@@ -1,4 +1,5 @@
 import GiedLogo from "../../assets/images/LOGOTIPO GIED VERSION 2.webp";
+import { useTranslation } from "react-i18next";
 import {
   FaInstagram,
   FaLinkedin,
@@ -8,6 +9,7 @@ import {
 } from "react-icons/fa";
 
 const Footer = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -22,15 +24,14 @@ const Footer = () => {
               className="w-32 mb-6 brightness-0"
             />
             <p className="text-gray-600 text-sm leading-relaxed max-w-xs">
-              Expertos en gestión integral de eventos deportivos. Hacemos
-              realidad tu proyecto con profesionalidad, pasión y compromiso.
+              {t("footer.description")}
             </p>
           </div>
 
           {/* Contacto */}
           <div>
             <h3 className="font-panton font-bold text-lg mb-6 text-principal">
-              Contacto
+              {t("footer.contact")}
             </h3>
             <ul className="space-y-4 text-sm text-gray-600">
               <li className="flex items-start gap-3">
@@ -53,7 +54,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start gap-3">
                 <FaMapMarkerAlt className="mt-1 text-turquesa65 flex-shrink-0" />
-                <span>Islas Baleares, España</span>
+                <span>{t("footer.address")}</span>
               </li>
             </ul>
           </div>
@@ -61,22 +62,22 @@ const Footer = () => {
           {/* Legal */}
           <div>
             <h3 className="font-panton font-bold text-lg mb-6 text-principal">
-              Legal
+              {t("footer.legal.title")}
             </h3>
             <ul className="space-y-3 text-sm text-gray-600">
               <li>
                 <a href="#" className="hover:text-principal transition-colors">
-                  Aviso Legal
+                  {t("footer.legal.links.notice")}
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-principal transition-colors">
-                  Política de Privacidad
+                  {t("footer.legal.links.privacy")}
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-principal transition-colors">
-                  Política de Cookies
+                  {t("footer.legal.links.cookies")}
                 </a>
               </li>
             </ul>
@@ -85,7 +86,7 @@ const Footer = () => {
           {/* Redes Sociales */}
           <div>
             <h3 className="font-panton font-bold text-lg mb-6 text-principal">
-              Síguenos
+              {t("footer.followUs")}
             </h3>
             <div className="flex gap-4">
               <a
@@ -112,9 +113,11 @@ const Footer = () => {
 
         {/* Barra inferior */}
         <div className="pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
-          <p>© {currentYear} GIED Esports - Todos los derechos reservados</p>
           <p>
-            Web desarrollada por{" "}
+            © {currentYear} GIED Esports - {t("footer.rights")}
+          </p>
+          <p>
+            {t("footer.developedBy")}{" "}
             <a
               href="https://brian-darakdjian.vercel.app/"
               target="_blank"

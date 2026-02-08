@@ -1,0 +1,179 @@
+{
+  "hero": {
+    "title": "Welcome to GIED!",
+    "subtitle": "We raise the level of sporting events in the Balearic Islands with comprehensive, modern, and people-centered management.",
+    "cta": "Discover more about us",
+    "ctaAria": "Press to learn more about us"
+  },
+  "header": {
+    "menu": {
+      "about": "What is GIED?",
+      "process": "Our Process",
+      "services": "Our Services",
+      "contact": "Contact Us"
+    },
+    "aria": {
+      "openMenu": "Open menu",
+      "closeMenu": "Close menu",
+      "instagram": "Instagram"
+    }
+  },
+  "about": {
+    "title": "What is <0>GIED</0>?",
+    "description": "GIED Esports was born to professionalize and raise the level of sporting events in the Balearic Islands, providing a modern, efficient, and people-centered vision.",
+    "cards": {
+      "leadership": {
+        "title": "Foundation and Leadership",
+        "description": "Founded in December 2021 by Gabriel and Miguel Quetglas Bover, with a solid family and professional structure."
+      },
+      "management": {
+        "title": "Comprehensive Management",
+        "description": "Specialists in the creation, planning, and 360º management of events and public and private sports facilities."
+      },
+      "dna": {
+        "title": "Sports DNA",
+        "description": "Team formed by athletes with real experience in organizing tournaments, leagues, camps, and championships."
+      }
+    },
+    "sidebar": {
+      "expert": {
+        "title": "Expert Team",
+        "description": "We understand sports from the inside to offer effective solutions."
+      },
+      "stats": {
+        "year": {
+          "value": "2021",
+          "label": "Start Year"
+        },
+        "dedication": {
+          "value": "100%",
+          "label": "Dedication"
+        }
+      }
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "description": "At GIED Esports we work with a wide variety of formats, always adapting to the client's needs and guaranteeing maximum professionalism.",
+    "process": {
+      "title": "Our Process",
+      "subtitle": "How we bring your idea to reality",
+      "stepLabel": "Step {{count}}",
+      "steps": {
+        "conceptualization": {
+          "title": "Conceptualization",
+          "description": "Design of the base idea and definition of objectives."
+        },
+        "planning": {
+          "title": "Planning",
+          "description": "Technical development, schedule and roadmap."
+        },
+        "organization": {
+          "title": "Organization",
+          "description": "Comprehensive logistics: spaces, materials and permits."
+        },
+        "coordination": {
+          "title": "Coordination",
+          "description": "Efficient management of human teams and providers."
+        },
+        "execution": {
+          "title": "Execution",
+          "description": "On-site direction of the event guaranteeing its development."
+        },
+        "evaluation": {
+          "title": "Evaluation",
+          "description": "Analysis of results and feedback for continuous improvement."
+        }
+      }
+    },
+    "list": {
+      "privateTournaments": {
+        "title": "Private Tournaments",
+        "description": "Organization of tournaments for companies, clubs or associations. We bet on healthy, fun and structured competition for all levels."
+      },
+      "federatedCompetitions": {
+        "title": "Federated Competitions",
+        "description": "Close collaboration with sports federations for the creation and management of official competitions, strictly complying with current regulations."
+      },
+      "sportsCamps": {
+        "title": "Sports Camps",
+        "description": "Design of improvement, mixed or recreational camps. Ideal for holiday periods, focused on technical improvement and fun."
+      },
+      "sportsClinics": {
+        "title": "Sports Clinics",
+        "description": "Training days taught by qualified professionals, oriented to specific technical learning and the transmission of values."
+      },
+      "popularSportsDays": {
+        "title": "Popular Sports Days",
+        "description": "Events open to all ages to encourage physical activity and family coexistence through sport."
+      },
+      "popularRaces": {
+        "title": "Popular Races and Events",
+        "description": "Comprehensive organization of races and non-federated sports events, taking care of every logistical detail, permits and safety of the participants."
+      },
+      "schoolSports": {
+        "title": "School Sports",
+        "description": "Management and coordination of extracurricular and sports activities for children and young people, promoting healthy habits, companionship and respect."
+      },
+      "leagues": {
+        "title": "Leagues and Championships",
+        "description": "Organization and management of regular leagues and specific championships, both federated and amateur, with adapted competition systems."
+      },
+      "publicFacilities": {
+        "title": "Public Facilities",
+        "description": "Comprehensive management of municipal facilities, optimizing public resources and offering citizens accessible and quality spaces."
+      },
+      "privateFacilities": {
+        "title": "Private Facilities Management",
+        "description": "Administration and revitalization of private sports centers, focused on improving economic performance, usage rate and overall user experience."
+      }
+    },
+    "buttons": {
+      "showMore": "Show more",
+      "showLess": "Show less"
+    }
+  },
+  "contact": {
+    "title": "Tell Us Your Idea",
+    "subtitle": "We make it a reality.",
+    "description": "Regardless of the size or type of project, we invite you to present your idea to us. At GIED Esports we will be delighted to analyze it, advise you and offer you a proposal fully adapted to your needs.",
+    "info": {
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location",
+      "address": "Balearic Islands, Spain"
+    },
+    "form": {
+      "title": "Send us a message",
+      "name": {
+        "label": "Name",
+        "placeholder": "Your name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "youremail@example.com"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "How can we help you?"
+      },
+      "submit": "Send Message"
+    }
+  },
+  "footer": {
+    "description": "Experts in comprehensive management of sports events. We make your project a reality with professionalism, passion and commitment.",
+    "contact": "Contact",
+    "address": "Balearic Islands, Spain",
+    "legal": {
+      "title": "Legal",
+      "links": {
+        "notice": "Legal Notice",
+        "privacy": "Privacy Policy",
+        "cookies": "Cookies Policy"
+      }
+    },
+    "followUs": "Follow Us",
+    "rights": "All rights reserved",
+    "developedBy": "Web developed by"
+  }
+}

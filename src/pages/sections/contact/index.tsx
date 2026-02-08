@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
   FaEnvelope,
   FaPhoneAlt,
@@ -7,6 +8,7 @@ import {
 } from "react-icons/fa";
 
 const ContactSection = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -37,16 +39,11 @@ const ContactSection = () => {
           <div className="flex flex-col gap-8">
             <div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-panton text-principal font-bold mb-6 leading-tight">
-                Cuéntanos tu Idea <br className="hidden md:block" />
-                <span className="text-turquesa65">
-                  Nosotros la hacemos realidad.
-                </span>
+                {t("contact.title")} <br className="hidden md:block" />
+                <span className="text-turquesa65">{t("contact.subtitle")}</span>
               </h2>
               <p className="text-lg text-gray-600 font-montserrat leading-relaxed max-w-lg">
-                Independientemente del tamaño o tipo de proyecto, le invitamos a
-                presentarnos su idea. En GIED Esports estaremos encantados de
-                analizarla, asesorarle y ofrecerle una propuesta totalmente
-                adaptada a sus necesidades.
+                {t("contact.description")}
               </p>
             </div>
 
@@ -57,7 +54,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-principal text-lg font-panton">
-                    Email
+                    {t("contact.info.email")}
                   </h3>
                   <a
                     href="mailto:info@giedesports.com"
@@ -74,7 +71,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-principal text-lg font-panton">
-                    Teléfono
+                    {t("contact.info.phone")}
                   </h3>
                   <a
                     href="tel:+34600000000"
@@ -91,10 +88,10 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-principal text-lg font-panton">
-                    Ubicación
+                    {t("contact.info.location")}
                   </h3>
                   <p className="font-montserrat text-gray-600">
-                    Islas Baleares, España
+                    {t("contact.info.address")}
                   </p>
                 </div>
               </div>
@@ -107,7 +104,7 @@ const ContactSection = () => {
             <div className="absolute top-0 right-0 w-32 h-32 bg-turquesa10 rounded-bl-full -mr-10 -mt-10 opacity-50 pointer-events-none"></div>
 
             <h3 className="text-2xl font-bold font-panton text-principal mb-6">
-              Envíanos un mensaje
+              {t("contact.form.title")}
             </h3>
 
             <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
@@ -117,13 +114,13 @@ const ContactSection = () => {
                     htmlFor="name"
                     className="text-sm font-bold text-gray-700 font-montserrat ml-1"
                   >
-                    Nombre
+                    {t("contact.form.name.label")}
                   </label>
                   <input
                     type="text"
                     id="name"
                     name="name"
-                    placeholder="Tu nombre"
+                    placeholder={t("contact.form.name.placeholder")}
                     value={formData.name}
                     onChange={handleChange}
                     className="w-full p-4 rounded-xl bg-gray-50 border-2 border-transparent focus:bg-white focus:border-turquesa65 focus:outline-none transition-all duration-300 font-montserrat"
@@ -135,13 +132,13 @@ const ContactSection = () => {
                     htmlFor="email"
                     className="text-sm font-bold text-gray-700 font-montserrat ml-1"
                   >
-                    Correo electrónico
+                    {t("contact.form.email.label")}
                   </label>
                   <input
                     type="email"
                     id="email"
                     name="email"
-                    placeholder="tucorreo@ejemplo.com"
+                    placeholder={t("contact.form.email.placeholder")}
                     value={formData.email}
                     onChange={handleChange}
                     className="w-full p-4 rounded-xl bg-gray-50 border-2 border-transparent focus:bg-white focus:border-turquesa65 focus:outline-none transition-all duration-300 font-montserrat"
@@ -155,12 +152,12 @@ const ContactSection = () => {
                   htmlFor="message"
                   className="text-sm font-bold text-gray-700 font-montserrat ml-1"
                 >
-                  Mensaje
+                  {t("contact.form.message.label")}
                 </label>
                 <textarea
                   id="message"
                   name="message"
-                  placeholder="¿Cómo podemos ayudarte?"
+                  placeholder={t("contact.form.message.placeholder")}
                   value={formData.message}
                   onChange={handleChange}
                   rows={5}
@@ -173,7 +170,7 @@ const ContactSection = () => {
                 type="submit"
                 className="w-full bg-principal text-white py-4 rounded-xl font-bold font-panton text-lg hover:bg-turquesa65 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3 group"
               >
-                Enviar Mensaje
+                {t("contact.form.submit")}
                 <FaPaperPlane className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300 text-sm" />
               </button>
             </form>

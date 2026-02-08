@@ -1,0 +1,179 @@
+{
+  "hero": {
+    "title": "¡Bienvenidos a GIED!",
+    "subtitle": "Elevamos el nivel de los eventos deportivos en Baleares con una gestión integral, moderna y centrada en las personas.",
+    "cta": "Descubre más sobre nosotros",
+    "ctaAria": "Presiona para conocer más sobre nosotros"
+  },
+  "header": {
+    "menu": {
+      "about": "¿Qué es Gied?",
+      "process": "Nuestro Proceso",
+      "services": "Nuestros Servicios",
+      "contact": "Contáctanos"
+    },
+    "aria": {
+      "openMenu": "Abrir menú",
+      "closeMenu": "Cerrar menú",
+      "instagram": "Instagram"
+    }
+  },
+  "about": {
+    "title": "¿Qué es <0>GIED</0>?",
+    "description": "GIED Esports nace para profesionalizar y elevar el nivel de los eventos deportivos en las Islas Baleares, aportando una visión moderna, eficiente y centrada en las personas.",
+    "cards": {
+      "leadership": {
+        "title": "Fundación y Liderazgo",
+        "description": "Fundada en diciembre de 2021 por Gabriel y Miguel Quetglas Bover, con una sólida estructura familiar y profesional."
+      },
+      "management": {
+        "title": "Gestión Integral",
+        "description": "Especialistas en la creación, planificación y gestión 360º de eventos y de instalaciones deportivas públicas y privadas."
+      },
+      "dna": {
+        "title": "ADN Deportivo",
+        "description": "Equipo formado por deportistas con experiencia real en la organización de torneos, ligas, campus y campeonatos."
+      }
+    },
+    "sidebar": {
+      "expert": {
+        "title": "Equipo Experto",
+        "description": "Entendemos el deporte desde dentro para ofrecer soluciones eficaces."
+      },
+      "stats": {
+        "year": {
+          "value": "2021",
+          "label": "Año Inicio"
+        },
+        "dedication": {
+          "value": "100%",
+          "label": "Dedicación"
+        }
+      }
+    }
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "description": "En GIED Esports trabajamos con una amplia variedad de formatos, adaptándonos siempre a las necesidades del cliente y garantizando la máxima profesionalidad.",
+    "process": {
+      "title": "Nuestro Proceso",
+      "subtitle": "Cómo llevamos tu idea a la realidad",
+      "stepLabel": "Paso {{count}}",
+      "steps": {
+        "conceptualization": {
+          "title": "Conceptualización",
+          "description": "Diseño de la idea base y definición de objetivos."
+        },
+        "planning": {
+          "title": "Planificación",
+          "description": "Desarrollo técnico, cronograma y hoja de ruta."
+        },
+        "organization": {
+          "title": "Organización",
+          "description": "Logística integral: espacios, materiales y permisos."
+        },
+        "coordination": {
+          "title": "Coordinación",
+          "description": "Gestión eficiente de equipos humanos y proveedores."
+        },
+        "execution": {
+          "title": "Ejecución",
+          "description": "Dirección in situ del evento garantizando su desarrollo."
+        },
+        "evaluation": {
+          "title": "Evaluación",
+          "description": "Análisis de resultados y feedback para mejora continua."
+        }
+      }
+    },
+    "list": {
+      "privateTournaments": {
+        "title": "Torneos Privados",
+        "description": "Organización de torneos para empresas, clubes o asociaciones. Apostamos por una competición sana, divertida y estructurada para todos los niveles."
+      },
+      "federatedCompetitions": {
+        "title": "Competiciones Federadas",
+        "description": "Colaboración estrecha con federaciones deportivas para la creación y gestión de competiciones oficiales, cumpliendo estrictamente la normativa vigente."
+      },
+      "sportsCamps": {
+        "title": "Campus Deportivos",
+        "description": "Diseño de campus de perfeccionamiento, mixtos o recreativos. Ideales para periodos vacacionales, enfocados en la mejora técnica y la diversión."
+      },
+      "sportsClinics": {
+        "title": "Clínics Deportivos",
+        "description": "Jornadas formativas impartidas por profesionales cualificados, orientadas al aprendizaje técnico específico y a la transmisión de valores."
+      },
+      "popularSportsDays": {
+        "title": "Diadas Deportivas Populares",
+        "description": "Eventos abiertos a todas las edades para fomentar la actividad física y la convivencia familiar a través del deporte."
+      },
+      "popularRaces": {
+        "title": "Carreras Populares y Eventos",
+        "description": "Organización integral de carreras y pruebas deportivas no federadas, cuidando cada detalle logístico, permisos y seguridad de los participantes."
+      },
+      "schoolSports": {
+        "title": "Deporte en Edad Escolar",
+        "description": "Gestión y coordinación de actividades extraescolares y deportivas para niños y jóvenes, fomentando hábitos saludables, compañerismo y respeto."
+      },
+      "leagues": {
+        "title": "Ligas y Campeonatos",
+        "description": "Organización y gestión de ligas regulares y campeonatos puntuales, tanto federados como amateurs, con sistemas de competición adaptados."
+      },
+      "publicFacilities": {
+        "title": "Instalaciones Públicas",
+        "description": "Gestión integral de instalaciones municipales, optimizando recursos públicos y ofreciendo a la ciudadanía espacios accesibles y de calidad."
+      },
+      "privateFacilities": {
+        "title": "Gestión de Instalaciones Privadas",
+        "description": "Administración y dinamización de centros deportivos privados, enfocados en mejorar el rendimiento económico, la tasa de uso y la experiencia global del usuario."
+      }
+    },
+    "buttons": {
+      "showMore": "Mostrar más",
+      "showLess": "Mostrar menos"
+    }
+  },
+  "contact": {
+    "title": "Cuéntanos tu Idea",
+    "subtitle": "Nosotros la hacemos realidad.",
+    "description": "Independientemente del tamaño o tipo de proyecto, le invitamos a presentarnos su idea. En GIED Esports estaremos encantados de analizarla, asesorarle y ofrecerle una propuesta totalmente adaptada a sus necesidades.",
+    "info": {
+      "email": "Email",
+      "phone": "Teléfono",
+      "location": "Ubicación",
+      "address": "Islas Baleares, España"
+    },
+    "form": {
+      "title": "Envíanos un mensaje",
+      "name": {
+        "label": "Nombre",
+        "placeholder": "Tu nombre"
+      },
+      "email": {
+        "label": "Correo electrónico",
+        "placeholder": "tucorreo@ejemplo.com"
+      },
+      "message": {
+        "label": "Mensaje",
+        "placeholder": "¿Cómo podemos ayudarte?"
+      },
+      "submit": "Enviar Mensaje"
+    }
+  },
+  "footer": {
+    "description": "Expertos en gestión integral de eventos deportivos. Hacemos realidad tu proyecto con profesionalidad, pasión y compromiso.",
+    "contact": "Contacto",
+    "address": "Islas Baleares, España",
+    "legal": {
+      "title": "Legal",
+      "links": {
+        "notice": "Aviso Legal",
+        "privacy": "Política de Privacidad",
+        "cookies": "Política de Cookies"
+      }
+    },
+    "followUs": "Síguenos",
+    "rights": "Todos los derechos reservados",
+    "developedBy": "Web desarrollada por"
+  }
+}

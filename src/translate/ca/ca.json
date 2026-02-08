@@ -1,0 +1,179 @@
+{
+  "hero": {
+    "title": "Benvinguts a GIED!",
+    "subtitle": "Elevem el nivell dels esdeveniments esportius a les Balears amb una gestió integral, moderna i centrada en les persones.",
+    "cta": "Descobreix més sobre nosaltres",
+    "ctaAria": "Prem per saber-ne més sobre nosaltres"
+  },
+  "header": {
+    "menu": {
+      "about": "Què és GIED?",
+      "process": "El Nostre Procés",
+      "services": "Els Nostres Serveis",
+      "contact": "Contacta'ns"
+    },
+    "aria": {
+      "openMenu": "Obrir menú",
+      "closeMenu": "Tancar menú",
+      "instagram": "Instagram"
+    }
+  },
+  "about": {
+    "title": "Què és <0>GIED</0>?",
+    "description": "GIED Esports neix per professionalitzar i elevar el nivell dels esdeveniments esportius a les Illes Balears, aportant una visió moderna, eficient i centrada en les persones.",
+    "cards": {
+      "leadership": {
+        "title": "Fundació i Lideratge",
+        "description": "Fundada el desembre de 2021 per Gabriel i Miguel Quetglas Bover, amb una sòlida estructura familiar i professional."
+      },
+      "management": {
+        "title": "Gestió Integral",
+        "description": "Especialistes en la creació, planificació i gestió 360º d'esdeveniments i d'instal·lacions esportives públiques i privades."
+      },
+      "dna": {
+        "title": "ADN Esportiu",
+        "description": "Equip format per esportistes amb experiència real en l'organització de tornejos, lligues, campus i campionats."
+      }
+    },
+    "sidebar": {
+      "expert": {
+        "title": "Equip Expert",
+        "description": "Entenem l'esport des de dins per oferir solucions eficaces."
+      },
+      "stats": {
+        "year": {
+          "value": "2021",
+          "label": "Any Inici"
+        },
+        "dedication": {
+          "value": "100%",
+          "label": "Dedicació"
+        }
+      }
+    }
+  },
+  "services": {
+    "title": "Els Nostres Serveis",
+    "description": "A GIED Esports treballem amb una àmplia varietat de formats, adaptant-nos sempre a les necessitats del client i garantint la màxima professionalitat.",
+    "process": {
+      "title": "El Nostre Procés",
+      "subtitle": "Com portem la teva idea a la realitat",
+      "stepLabel": "Pas {{count}}",
+      "steps": {
+        "conceptualization": {
+          "title": "Conceptualització",
+          "description": "Disseny de la idea base i definició d'objectius."
+        },
+        "planning": {
+          "title": "Planificació",
+          "description": "Desenvolupament tècnic, cronograma i full de ruta."
+        },
+        "organization": {
+          "title": "Organització",
+          "description": "Logística integral: espais, materials i permisos."
+        },
+        "coordination": {
+          "title": "Coordinació",
+          "description": "Gestió eficient d'equips humans i proveïdors."
+        },
+        "execution": {
+          "title": "Execució",
+          "description": "Direcció in situ de l'esdeveniment garantint el seu desenvolupament."
+        },
+        "evaluation": {
+          "title": "Avaluació",
+          "description": "Anàlisi de resultats i feedback per a la millora contínua."
+        }
+      }
+    },
+    "list": {
+      "privateTournaments": {
+        "title": "Torneigs Privats",
+        "description": "Organització de torneigs per a empreses, clubs o associacions. Apostem per una competició sana, divertida i estructurada per a tots els nivells."
+      },
+      "federatedCompetitions": {
+        "title": "Competicions Federades",
+        "description": "Col·laboració estreta amb federacions esportives per a la creació i gestió de competicions oficials, complint estrictament la normativa vigent."
+      },
+      "sportsCamps": {
+        "title": "Campus Esportius",
+        "description": "Disseny de campus de perfeccionament, mixtos o recreatius. Ideals per a períodes de vacances, enfocats en la millora tècnica i la diversió."
+      },
+      "sportsClinics": {
+        "title": "Clínics Esportius",
+        "description": "Jornades formatives impartides per professionals qualificats, orientades a l'aprenentatge tècnic específic i a la transmissió de valors."
+      },
+      "popularSportsDays": {
+        "title": "Diades Esportives Populars",
+        "description": "Esdeveniments oberts a totes les edats per fomentar l'activitat física i la convivència familiar a través de l'esport."
+      },
+      "popularRaces": {
+        "title": "Curses Populars i Esdeveniments",
+        "description": "Organització integral de curses i proves esportives no federades, cuidant cada detall logístic, permisos i seguretat dels participants."
+      },
+      "schoolSports": {
+        "title": "Esport en Edat Escolar",
+        "description": "Gestió i coordinació d'activitats extraescolars i esportives per a nens i joves, fomentant hàbits saludables, companyonia i respecte."
+      },
+      "leagues": {
+        "title": "Lligues i Campionats",
+        "description": "Organització i gestió de lligues regulars i campionats puntuals, tant federats com amateurs, amb sistemes de competició adaptats."
+      },
+      "publicFacilities": {
+        "title": "Instal·lacions Públiques",
+        "description": "Gestió integral d'instal·lacions municipals, optimitzant recursos públics i oferint a la ciutadania espais accessibles i de qualitat."
+      },
+      "privateFacilities": {
+        "title": "Gestió d'Instal·lacions Privades",
+        "description": "Administració i dinamització de centres esportius privats, enfocats en millorar el rendiment econòmic, la taxa d'ús i l'experiència global de l'usuari."
+      }
+    },
+    "buttons": {
+      "showMore": "Mostrar més",
+      "showLess": "Mostrar menys"
+    }
+  },
+  "contact": {
+    "title": "Explica'ns la teva Idea",
+    "subtitle": "Nosaltres la fem realitat.",
+    "description": "Independentment de la mida o tipus de projecte, us convidem a presentar-nos la vostra idea. A GIED Esports estarem encantats d'analitzar-la, assessorar-vos i oferir-vos una proposta totalment adaptada a les vostres necessitats.",
+    "info": {
+      "email": "Email",
+      "phone": "Telèfon",
+      "location": "Ubicació",
+      "address": "Illes Balears, Espanya"
+    },
+    "form": {
+      "title": "Envia'ns un missatge",
+      "name": {
+        "label": "Nom",
+        "placeholder": "El teu nom"
+      },
+      "email": {
+        "label": "Correu electrònic",
+        "placeholder": "elteucorreu@exemple.com"
+      },
+      "message": {
+        "label": "Missatge",
+        "placeholder": "Com et podem ajudar?"
+      },
+      "submit": "Enviar Missatge"
+    }
+  },
+  "footer": {
+    "description": "Experts en gestió integral d'esdeveniments esportius. Fem realitat el teu projecte amb professionalitat, passió i compromís.",
+    "contact": "Contacte",
+    "address": "Illes Balears, Espanya",
+    "legal": {
+      "title": "Legal",
+      "links": {
+        "notice": "Avís Legal",
+        "privacy": "Política de Privacitat",
+        "cookies": "Política de Cookies"
+      }
+    },
+    "followUs": "Segueix-nos",
+    "rights": "Tots els drets reservats",
+    "developedBy": "Web desenvolupada per"
+  }
+}

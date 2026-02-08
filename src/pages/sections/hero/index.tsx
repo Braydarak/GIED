@@ -2,8 +2,10 @@
 import bg from "../../../assets/images/bg-image.avif";
 import { useEffect, useRef, useState } from "react";
 import { isMobile, ScrollToTop } from "../../../utils/functions";
+import { useTranslation } from "react-i18next";
 
 const HeroSection = () => {
+  const { t } = useTranslation();
   ScrollToTop();
 
   useEffect(() => {
@@ -61,7 +63,7 @@ const HeroSection = () => {
             transition: "opacity 1s ease-out, transform 1s ease-out",
           }}
         >
-          ¡Bienvenidos a GIED!
+          {t("hero.title")}
         </h1>
         <p
           className="text-xl font-panton text-turquesa80 mb-8 sm:text-xl sm:px-6 md:max-w-xl mx-auto"
@@ -71,22 +73,21 @@ const HeroSection = () => {
             transition: "opacity 1s ease-out 0.2s, transform 1s ease-out 0.2s",
           }}
         >
-          Elevamos el nivel de los eventos deportivos en Baleares con una
-          gestión integral, moderna y centrada en las personas.
+          {t("hero.subtitle")}
         </p>
 
         {/* Botón CTA */}
         <button
           ref={buttonRef}
           onClick={scrollToSection}
-          aria-label={`Presiona para conocer más sobre nosotros`}
+          aria-label={t("hero.ctaAria")}
           className={`
             bg-principal text-white text-lg sm:text-xl py-3 px-10 rounded-lg hover:bg-turquesa80
             transition-all ease-in-out duration-700 sm:py-4 sm:px-15
             transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}
           `}
         >
-          Descubre más sobre nosotros
+          {t("hero.cta")}
         </button>
       </div>
     </section>

@@ -1,0 +1,179 @@
+{
+  "hero": {
+    "title": "Willkommen bei GIED!",
+    "subtitle": "Wir heben das Niveau von Sportveranstaltungen auf den Balearen mit einem umfassenden, modernen und menschenorientierten Management.",
+    "cta": "Erfahren Sie mehr über uns",
+    "ctaAria": "Drücken Sie hier, um mehr über uns zu erfahren"
+  },
+  "header": {
+    "menu": {
+      "about": "Was ist GIED?",
+      "process": "Unser Prozess",
+      "services": "Unsere Dienstleistungen",
+      "contact": "Kontaktieren Sie uns"
+    },
+    "aria": {
+      "openMenu": "Menü öffnen",
+      "closeMenu": "Menü schließen",
+      "instagram": "Instagram"
+    }
+  },
+  "about": {
+    "title": "Was ist <0>GIED</0>?",
+    "description": "GIED Esports wurde gegründet, um das Niveau von Sportveranstaltungen auf den Balearen zu professionalisieren und anzuheben, indem eine moderne, effiziente und menschenorientierte Vision eingebracht wird.",
+    "cards": {
+      "leadership": {
+        "title": "Gründung und Führung",
+        "description": "Gegründet im Dezember 2021 von Gabriel und Miguel Quetglas Bover, mit einer soliden familiären und professionellen Struktur."
+      },
+      "management": {
+        "title": "Umfassendes Management",
+        "description": "Spezialisten für die Erstellung, Planung und 360º-Verwaltung von Veranstaltungen sowie öffentlichen und privaten Sportanlagen."
+      },
+      "dna": {
+        "title": "Sportliche DNA",
+        "description": "Team bestehend aus Sportlern mit echter Erfahrung in der Organisation von Turnieren, Ligen, Camps und Meisterschaften."
+      }
+    },
+    "sidebar": {
+      "expert": {
+        "title": "Expertenteam",
+        "description": "Wir verstehen Sport von innen heraus, um effektive Lösungen anzubieten."
+      },
+      "stats": {
+        "year": {
+          "value": "2021",
+          "label": "Startjahr"
+        },
+        "dedication": {
+          "value": "100%",
+          "label": "Engagement"
+        }
+      }
+    }
+  },
+  "services": {
+    "title": "Unsere Dienstleistungen",
+    "description": "Bei GIED Esports arbeiten wir mit einer Vielzahl von Formaten, passen uns immer den Bedürfnissen des Kunden an und garantieren maximale Professionalität.",
+    "process": {
+      "title": "Unser Prozess",
+      "subtitle": "Wie wir Ihre Idee in die Realität umsetzen",
+      "stepLabel": "Schritt {{count}}",
+      "steps": {
+        "conceptualization": {
+          "title": "Konzeptualisierung",
+          "description": "Entwurf der Grundidee und Definition der Ziele."
+        },
+        "planning": {
+          "title": "Planung",
+          "description": "Technische Entwicklung, Zeitplan und Roadmap."
+        },
+        "organization": {
+          "title": "Organisation",
+          "description": "Umfassende Logistik: Räume, Materialien und Genehmigungen."
+        },
+        "coordination": {
+          "title": "Koordination",
+          "description": "Effizientes Management von Teams und Lieferanten."
+        },
+        "execution": {
+          "title": "Ausführung",
+          "description": "Leitung der Veranstaltung vor Ort, um ihren Ablauf zu gewährleisten."
+        },
+        "evaluation": {
+          "title": "Evaluierung",
+          "description": "Analyse der Ergebnisse und Feedback zur kontinuierlichen Verbesserung."
+        }
+      }
+    },
+    "list": {
+      "privateTournaments": {
+        "title": "Private Turniere",
+        "description": "Organisation von Turnieren für Unternehmen, Clubs oder Verbände. Wir setzen auf einen gesunden, unterhaltsamen und strukturierten Wettbewerb für alle Niveaus."
+      },
+      "federatedCompetitions": {
+        "title": "Föderierte Wettbewerbe",
+        "description": "Enge Zusammenarbeit mit Sportverbänden zur Schaffung und Verwaltung offizieller Wettbewerbe unter strikter Einhaltung der geltenden Vorschriften."
+      },
+      "sportsCamps": {
+        "title": "Sportcamps",
+        "description": "Design von Fortbildungs-, gemischten oder Freizeitcamps. Ideal für Ferienzeiten, konzentriert auf technische Verbesserung und Spaß."
+      },
+      "sportsClinics": {
+        "title": "Sportkliniken",
+        "description": "Schulungstage, die von qualifizierten Fachleuten durchgeführt werden, orientiert am spezifischen technischen Lernen und der Vermittlung von Werten."
+      },
+      "popularSportsDays": {
+        "title": "Beliebte Sporttage",
+        "description": "Veranstaltungen für alle Altersgruppen zur Förderung körperlicher Aktivität und des familiären Zusammenlebens durch Sport."
+      },
+      "popularRaces": {
+        "title": "Volksläufe und Veranstaltungen",
+        "description": "Umfassende Organisation von Rennen und nicht-föderierten Sportveranstaltungen, wobei auf jedes logistische Detail, Genehmigungen und die Sicherheit der Teilnehmer geachtet wird."
+      },
+      "schoolSports": {
+        "title": "Schulsport",
+        "description": "Management und Koordination von außerschulischen und sportlichen Aktivitäten für Kinder und Jugendliche, Förderung gesunder Gewohnheiten, Kameradschaft und Respekt."
+      },
+      "leagues": {
+        "title": "Ligen und Meisterschaften",
+        "description": "Organisation und Management von regulären Ligen und punktuellen Meisterschaften, sowohl föderiert als auch amateurhaft, mit angepassten Wettkampfsystemen."
+      },
+      "publicFacilities": {
+        "title": "Öffentliche Einrichtungen",
+        "description": "Umfassendes Management kommunaler Einrichtungen, Optimierung öffentlicher Ressourcen und Angebot zugänglicher und hochwertiger Räume für die Bürger."
+      },
+      "privateFacilities": {
+        "title": "Management privater Einrichtungen",
+        "description": "Verwaltung und Dynamisierung privater Sportzentren, konzentriert auf die Verbesserung der wirtschaftlichen Leistung, der Nutzungsrate und der globalen Benutzererfahrung."
+      }
+    },
+    "buttons": {
+      "showMore": "Mehr anzeigen",
+      "showLess": "Weniger anzeigen"
+    }
+  },
+  "contact": {
+    "title": "Erzählen Sie uns Ihre Idee",
+    "subtitle": "Wir machen sie zur Realität.",
+    "description": "Unabhängig von der Größe oder Art des Projekts laden wir Sie ein, uns Ihre Idee vorzustellen. Bei GIED Esports freuen wir uns darauf, sie zu analysieren, Sie zu beraten und Ihnen einen Vorschlag zu unterbreiten, der vollständig an Ihre Bedürfnisse angepasst ist.",
+    "info": {
+      "email": "Email",
+      "phone": "Telefon",
+      "location": "Standort",
+      "address": "Balearen, Spanien"
+    },
+    "form": {
+      "title": "Senden Sie uns eine Nachricht",
+      "name": {
+        "label": "Name",
+        "placeholder": "Ihr Name"
+      },
+      "email": {
+        "label": "E-Mail",
+        "placeholder": "ihreemail@beispiel.com"
+      },
+      "message": {
+        "label": "Nachricht",
+        "placeholder": "Wie können wir Ihnen helfen?"
+      },
+      "submit": "Nachricht senden"
+    }
+  },
+  "footer": {
+    "description": "Experten für das umfassende Management von Sportveranstaltungen. Wir verwirklichen Ihr Projekt mit Professionalität, Leidenschaft und Engagement.",
+    "contact": "Kontakt",
+    "address": "Balearen, Spanien",
+    "legal": {
+      "title": "Rechtliches",
+      "links": {
+        "notice": "Rechtlicher Hinweis",
+        "privacy": "Datenschutzrichtlinie",
+        "cookies": "Cookie-Richtlinie"
+      }
+    },
+    "followUs": "Folgen Sie uns",
+    "rights": "Alle Rechte vorbehalten",
+    "developedBy": "Web entwickelt von"
+  }
+}

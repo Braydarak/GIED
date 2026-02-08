@@ -9,10 +9,12 @@ import {
   FaCalendarAlt,
   FaPercentage,
 } from "react-icons/fa";
+import { useTranslation, Trans } from "react-i18next";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutUsSection = () => {
+  const { t } = useTranslation();
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -68,12 +70,13 @@ const AboutUsSection = () => {
         {/* Intro Header */}
         <div ref={headerRef} className="text-center max-w-4xl mx-auto">
           <h2 className="text-5xl md:text-6xl font-panton text-principal font-bold mb-8 tracking-tight">
-            ¿Qué es <span className="text-turquesa80">GIED</span>?
+            <Trans
+              i18nKey="about.title"
+              components={{ 0: <span className="text-turquesa80" /> }}
+            />
           </h2>
           <p className="text-xl md:text-2xl font-montserrat font-medium text-gray-700 leading-relaxed">
-            GIED Esports nace para profesionalizar y elevar el nivel de los
-            eventos deportivos en las Islas Baleares, aportando una visión
-            moderna, eficiente y centrada en las personas.
+            {t("about.description")}
           </p>
         </div>
 
@@ -87,11 +90,10 @@ const AboutUsSection = () => {
               </div>
               <div>
                 <h3 className="text-2xl font-panton font-bold text-principal mb-3">
-                  Fundación y Liderazgo
+                  {t("about.cards.leadership.title")}
                 </h3>
                 <p className="font-montserrat text-gray-600 leading-relaxed">
-                  Fundada en diciembre de 2021 por Gabriel y Miguel Quetglas
-                  Bover, con una sólida estructura familiar y profesional.
+                  {t("about.cards.leadership.description")}
                 </p>
               </div>
             </div>
@@ -103,11 +105,10 @@ const AboutUsSection = () => {
               </div>
               <div>
                 <h3 className="text-2xl font-panton font-bold text-principal mb-3">
-                  Gestión Integral
+                  {t("about.cards.management.title")}
                 </h3>
                 <p className="font-montserrat text-gray-600 leading-relaxed">
-                  Especialistas en la creación, planificación y gestión 360º de
-                  eventos y de instalaciones deportivas públicas y privadas.
+                  {t("about.cards.management.description")}
                 </p>
               </div>
             </div>
@@ -119,11 +120,10 @@ const AboutUsSection = () => {
               </div>
               <div>
                 <h3 className="text-2xl font-panton font-bold text-principal mb-3">
-                  ADN Deportivo
+                  {t("about.cards.dna.title")}
                 </h3>
                 <p className="font-montserrat text-gray-600 leading-relaxed">
-                  Equipo formado por deportistas con experiencia real en la
-                  organización de torneos, ligas, campus y campeonatos.
+                  {t("about.cards.dna.description")}
                 </p>
               </div>
             </div>
@@ -139,12 +139,11 @@ const AboutUsSection = () => {
               <div className="flex items-center gap-4 mb-4">
                 <FaBrain className="text-3xl text-turquesa65" />
                 <h3 className="text-2xl font-panton font-bold">
-                  Equipo Experto
+                  {t("about.sidebar.expert.title")}
                 </h3>
               </div>
               <p className="font-montserrat text-gray-200 leading-relaxed">
-                Entendemos el deporte desde dentro para ofrecer soluciones
-                eficaces.
+                {t("about.sidebar.expert.description")}
               </p>
             </div>
 
@@ -155,10 +154,10 @@ const AboutUsSection = () => {
                   <FaCalendarAlt size={24} />
                 </div>
                 <div className="text-4xl font-panton font-bold text-principal mb-1">
-                  2021
+                  {t("about.sidebar.stats.year.value")}
                 </div>
                 <div className="text-xs font-bold font-montserrat text-gray-400 tracking-widest uppercase">
-                  Año Inicio
+                  {t("about.sidebar.stats.year.label")}
                 </div>
               </div>
 
@@ -168,10 +167,10 @@ const AboutUsSection = () => {
                   <FaPercentage size={24} />
                 </div>
                 <div className="text-4xl font-panton font-bold text-principal mb-1">
-                  100%
+                  {t("about.sidebar.stats.dedication.value")}
                 </div>
                 <div className="text-xs font-bold font-montserrat text-gray-400 tracking-widest uppercase">
-                  Dedicación
+                  {t("about.sidebar.stats.dedication.label")}
                 </div>
               </div>
             </div>

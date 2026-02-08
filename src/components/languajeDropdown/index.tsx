@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { FaChevronDown, FaGlobe } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const languages = [
   { code: "es", name: "Español", short: "ES" },
@@ -9,9 +10,17 @@ const languages = [
 ];
 
 const LanguageDropdown = ({ scrolled }: { scrolled: boolean }) => {
+  const { i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedLang, setSelectedLang] = useState(languages[0]);
+  const [selectedLang, setSelectedLang] = useState(
+    languages.find((lang) => lang.code === i18n.language) || languages[0],
+  );
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const currentLang = languages.find((lang) => lang.code === i18n.language);
+    if (currentLang) setSelectedLang(currentLang);
+  }, [i18n.language]);
 
   // Cerrar al hacer clic fuera
   useEffect(() => {
@@ -30,7 +39,7 @@ const LanguageDropdown = ({ scrolled }: { scrolled: boolean }) => {
   const handleSelect = (lang: (typeof languages)[0]) => {
     setSelectedLang(lang);
     setIsOpen(false);
-    // Aquí iría la lógica para cambiar el idioma en la aplicación (i18n)
+    i18n.changeLanguage(lang.code);
     console.log("Idioma cambiado a:", lang.code);
   };
 

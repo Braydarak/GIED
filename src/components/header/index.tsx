@@ -7,8 +7,10 @@ import MenuIcon from "../menuIcon";
 import CloseIcon from "../closeIcon";
 import { useScroll } from "../../context/ScrollContext";
 import LanguageDropdown from "../languajeDropdown";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
+  const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
@@ -228,7 +230,7 @@ const Header = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="hidden md:block cursor-pointer"
-          aria-label="Instagram"
+          aria-label={t("header.aria.instagram")}
           onMouseEnter={() => setInstagramHovered(true)}
           onMouseLeave={() => setInstagramHovered(false)}
         >
@@ -238,7 +240,7 @@ const Header = () => {
         {/* Menú Hamburguesa */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Abrir menú"
+          aria-label={t("header.aria.openMenu")}
           onMouseEnter={() => setMenuHovered(true)}
           onMouseLeave={() => setMenuHovered(false)}
           className="z-50 relative"
@@ -256,7 +258,10 @@ const Header = () => {
         >
           {/* Botón de cierre dentro del menú */}
           <div className="flex justify-end p-4 mt-8">
-            <button onClick={() => setMenuOpen(false)} aria-label="Cerrar menú">
+            <button
+              onClick={() => setMenuOpen(false)}
+              aria-label={t("header.aria.closeMenu")}
+            >
               <CloseIcon color="#000000" />
             </button>
           </div>
@@ -268,7 +273,7 @@ const Header = () => {
                 onClick={() => handleNavigation("about")}
                 className="text-gray-800 hover:text-principal transition cursor-pointer block w-full"
               >
-                ¿Que es Gied?
+                {t("header.menu.about")}
               </span>
             </li>
             <li className="menu-item-container w-full border-b border-gray-300 py-6">
@@ -276,7 +281,7 @@ const Header = () => {
                 onClick={() => handleNavigation("process")}
                 className="text-gray-800 hover:text-principal transition cursor-pointer block w-full"
               >
-                Nuestros Proceso
+                {t("header.menu.process")}
               </span>
             </li>
 
@@ -285,7 +290,7 @@ const Header = () => {
                 onClick={() => handleNavigation("services")}
                 className="text-gray-800 hover:text-principal transition cursor-pointer block w-full"
               >
-                Nuestros Servicios
+                {t("header.menu.services")}
               </span>
             </li>
             <li className="menu-item-container w-full border-b border-gray-300 py-6">
@@ -293,7 +298,7 @@ const Header = () => {
                 onClick={() => handleNavigation("contact")}
                 className="text-gray-800 hover:text-principal transition cursor-pointer block w-full"
               >
-                Contáctanos
+                {t("header.menu.contact")}
               </span>
             </li>
 
@@ -308,7 +313,7 @@ const Header = () => {
                     href="https://www.instagram.com/gied.esports/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Instagram"
+                    aria-label={t("header.aria.instagram")}
                     className="opacity-70 hover:opacity-100 transition-opacity"
                   >
                     <InstagramLogo width="24" height="24" fill="#000000" />
