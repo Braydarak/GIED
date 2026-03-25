@@ -27,11 +27,17 @@ const Header = () => {
     location.pathname,
   );
   const isTravelPage = /^\/travel(?:\/\d+)?$/.test(location.pathname);
+  const isLegalPage =
+    location.pathname === "/aviso-legal" ||
+    location.pathname === "/politica-de-privacidad" ||
+    location.pathname === "/politica-de-cookies";
+
+  const headerScrolled = scrolled || isLegalPage;
 
   const defaultColor =
     isEventDetailsPage || isGalleryPage || isTravelPage
       ? "#000000"
-      : scrolled
+      : headerScrolled
         ? "#000000"
         : "#ffffff";
   const instagramFill = instagramHovered ? "#00a59e" : defaultColor;
@@ -42,6 +48,10 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    setScrolled(window.scrollY > 50);
+  }, [location.pathname]);
 
   useEffect(() => {
     const menuEl = menuRef.current;
@@ -186,7 +196,7 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 z-50 left-0 w-full flex justify-between items-center p-4 pl-4 pr-4 md:pl-16 md:pr-16 transition-all duration-300 ${
-        scrolled ? "bg-turquesa25" : "bg-transparent"
+        headerScrolled ? "bg-turquesa25" : "bg-transparent"
       }`}
     >
       {/* Logo de GIED */}
@@ -222,7 +232,7 @@ const Header = () => {
           aria-hidden="true"
         />
 
-        <LanguageDropdown scrolled={scrolled} />
+        <LanguageDropdown scrolled={headerScrolled} />
 
         {/* Instagram */}
         <a
@@ -256,58 +266,56 @@ const Header = () => {
             boxShadow: "rgba(0, 0, 0, 0.2) -5px 0px 15px",
           }}
         >
-          {/* Botón de cierre dentro del menú */}
-          <div className="flex justify-end p-4 mt-8">
-            <button
-              onClick={() => setMenuOpen(false)}
-              aria-label={t("header.aria.closeMenu")}
-            >
-              <CloseIcon color="#000000" />
-            </button>
-          </div>
-
-          {/* Items del menú */}
-          <ul className="flex flex-col items-stretch text-right space-y-0 px-8 pt-4 pb-0 font-montserrat text-2xl h-full">
-            <li className="menu-item-container w-full border-b border-gray-300 py-6">
-              <span
-                onClick={() => handleNavigation("about")}
-                className="text-gray-800 hover:text-principal transition cursor-pointer block w-full"
+          <div className="flex flex-col h-full">
+            {/* Botón de cierre dentro del menú */}
+            <div className="flex justify-end p-4 mt-8 shrink-0">
+              <button
+                onClick={() => setMenuOpen(false)}
+                aria-label={t("header.aria.closeMenu")}
               >
-                {t("header.menu.about")}
-              </span>
-            </li>
-            <li className="menu-item-container w-full border-b border-gray-300 py-6">
-              <span
-                onClick={() => handleNavigation("process")}
-                className="text-gray-800 hover:text-principal transition cursor-pointer block w-full"
-              >
-                {t("header.menu.process")}
-              </span>
-            </li>
+                <CloseIcon color="#000000" />
+              </button>
+            </div>
 
-            <li className="menu-item-container w-full border-b border-gray-300 py-6">
-              <span
-                onClick={() => handleNavigation("services")}
-                className="text-gray-800 hover:text-principal transition cursor-pointer block w-full"
-              >
-                {t("header.menu.services")}
-              </span>
-            </li>
-            <li className="menu-item-container w-full border-b border-gray-300 py-6">
-              <span
-                onClick={() => handleNavigation("contact")}
-                className="text-gray-800 hover:text-principal transition cursor-pointer block w-full"
-              >
-                {t("header.menu.contact")}
-              </span>
-            </li>
+            {/* Items del menú */}
+            <ul className="flex flex-col items-stretch text-right space-y-0 px-8 pt-4 pb-0 font-montserrat text-2xl flex-1 overflow-y-auto min-h-0">
+              <li className="menu-item-container w-full border-b border-gray-300 py-6">
+                <span
+                  onClick={() => handleNavigation("about")}
+                  className="text-gray-800 hover:text-principal transition cursor-pointer block w-full"
+                >
+                  {t("header.menu.about")}
+                </span>
+              </li>
+              <li className="menu-item-container w-full border-b border-gray-300 py-6">
+                <span
+                  onClick={() => handleNavigation("process")}
+                  className="text-gray-800 hover:text-principal transition cursor-pointer block w-full"
+                >
+                  {t("header.menu.process")}
+                </span>
+              </li>
 
-            {/* Espaciador flexible para empujar el footer hacia abajo */}
-            <li className="flex-grow"></li>
+              <li className="menu-item-container w-full border-b border-gray-300 py-6">
+                <span
+                  onClick={() => handleNavigation("services")}
+                  className="text-gray-800 hover:text-principal transition cursor-pointer block w-full"
+                >
+                  {t("header.menu.services")}
+                </span>
+              </li>
+              <li className="menu-item-container w-full border-b border-gray-300 py-6">
+                <span
+                  onClick={() => handleNavigation("contact")}
+                  className="text-gray-800 hover:text-principal transition cursor-pointer block w-full"
+                >
+                  {t("header.menu.contact")}
+                </span>
+              </li>
+            </ul>
 
-            {/* Footer del menú */}
-            <li className="menu-footer pb-8 pt-4">
-              <div className="flex flex-col items-end gap-2">
+            <div className="menu-footer px-8 pb-8 pt-3 shrink-0">
+              <div className="flex justify-between items-end gap-2">
                 <div className="flex items-center gap-4 mt-2">
                   <a
                     href="https://www.instagram.com/gied.esports/"
@@ -319,11 +327,37 @@ const Header = () => {
                     <InstagramLogo width="24" height="24" fill="#000000" />
                   </a>
                 </div>
+                <div className="text-xs text-gray-700 flex flex-col items-end gap-2">
+                  <span className="font-bold text-gray-800">
+                    {t("footer.legal.title")}
+                  </span>
+                  <div className="flex flex-col items-end gap-1">
+                    <Link
+                      to="/aviso-legal"
+                      onClick={() => setMenuOpen(false)}
+                      className="opacity-70 hover:opacity-100 hover:text-principal transition-all"
+                    >
+                      {t("footer.legal.links.notice")}
+                    </Link>
+                    <Link
+                      to="/politica-de-privacidad"
+                      onClick={() => setMenuOpen(false)}
+                      className="opacity-70 hover:opacity-100 hover:text-principal transition-all"
+                    >
+                      {t("footer.legal.links.privacy")}
+                    </Link>
+                    <Link
+                      to="/politica-de-cookies"
+                      onClick={() => setMenuOpen(false)}
+                      className="opacity-70 hover:opacity-100 hover:text-principal transition-all"
+                    >
+                      {t("footer.legal.links.cookies")}
+                    </Link>
+                  </div>
+                </div>
               </div>
-            </li>
-          </ul>
-
-          {/* Eliminamos el footer mobile anterior ya que ahora está integrado */}
+            </div>
+          </div>
         </nav>
       </div>
     </header>

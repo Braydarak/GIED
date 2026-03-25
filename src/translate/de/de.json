@@ -175,5 +175,125 @@
     "followUs": "Folgen Sie uns",
     "rights": "Alle Rechte vorbehalten",
     "developedBy": "Web entwickelt von"
+  },
+  "legalPages": {
+    "legalNotice": {
+      "title": "Rechtlicher Hinweis",
+      "intro": "In Erfüllung der Informationspflicht gemäß den geltenden Vorschriften werden nachfolgend die Identifikationsdaten des Betreibers dieser Website bereitgestellt.",
+      "sections": {
+        "owner": {
+          "title": "1. Betreiber der Website",
+          "text": "Identifikationsdaten des Website-Betreibers:",
+          "fields": {
+            "holderLabel": "Betreiber",
+            "holderValue": "GIED Esports (oder die entsprechende juristische Person).",
+            "idLabel": "Steuer-ID",
+            "idValue": "[AUSSTEHEND]",
+            "addressLabel": "Sitz",
+            "addressValue": "[AUSSTEHEND]",
+            "emailLabel": "E-Mail"
+          }
+        },
+        "purpose": {
+          "title": "2. Zweck",
+          "text": "Dieser rechtliche Hinweis regelt den Zugang zu und die Nutzung der Website. Der Zugriff auf die Website verleiht den Status eines Nutzers und impliziert die Annahme der hierin enthaltenen Bedingungen."
+        },
+        "terms": {
+          "title": "3. Nutzungsbedingungen",
+          "text": "Der Nutzer verpflichtet sich, die Website, ihre Inhalte und Dienste in Übereinstimmung mit dem Gesetz, der Moral, der öffentlichen Ordnung und diesem rechtlichen Hinweis zu nutzen. Die Nutzung der Website zu rechtswidrigen oder schädigenden Zwecken oder in einer Weise, die Schäden verursachen oder den normalen Betrieb der Website beeinträchtigen kann, ist untersagt."
+        },
+        "ip": {
+          "title": "4. Geistiges und gewerbliches Eigentum",
+          "text": "Alle Inhalte der Website (einschließlich, ohne Einschränkung, Texte, Bilder, Design, Logos, Quellcode und weitere Elemente) sind durch Rechte des geistigen und gewerblichen Eigentums geschützt. Eine Vervielfältigung, Verbreitung oder öffentliche Wiedergabe ohne ausdrückliche Genehmigung des Betreibers ist untersagt."
+        },
+        "liability": {
+          "title": "5. Haftung",
+          "text": "Der Betreiber haftet nicht für Schäden, die sich aus der Nutzung der Website ergeben können, noch für fehlende Verfügbarkeit oder Kontinuität sowie für mögliche Fehler oder Auslassungen in den Inhalten."
+        },
+        "thirdPartyLinks": {
+          "title": "6. Links zu Dritten",
+          "text": "Falls Links oder Hyperlinks zu anderen Websites bereitgestellt werden, übt der Betreiber keinerlei Kontrolle über deren Inhalte aus. In keinem Fall übernimmt der Betreiber Verantwortung für die Inhalte eines Links zu einer externen Website."
+        },
+        "law": {
+          "title": "7. Anwendbares Recht und Gerichtsstand",
+          "text": "Diese Bedingungen unterliegen dem spanischen Recht. Im Streitfall unterwerfen sich die Parteien den Gerichten, die gemäß Recht zuständig sind."
+        }
+      }
+    },
+    "privacyPolicy": {
+      "title": "Datenschutzrichtlinie",
+      "intro": "Diese Datenschutzrichtlinie beschreibt, wie personenbezogene Daten verarbeitet werden, die der Nutzer über diese Website bereitstellen kann.",
+      "sections": {
+        "controller": {
+          "title": "1. Verantwortlicher",
+          "text": "Kontaktdaten des Verantwortlichen:",
+          "fields": {
+            "controllerLabel": "Verantwortlicher",
+            "controllerValue": "GIED Esports (oder die entsprechende juristische Person).",
+            "idLabel": "Steuer-ID",
+            "idValue": "[AUSSTEHEND]",
+            "addressLabel": "Adresse",
+            "addressValue": "[AUSSTEHEND]",
+            "emailLabel": "E-Mail"
+          }
+        },
+        "dataProcessed": {
+          "title": "2. Personenbezogene Daten, die verarbeitet werden können",
+          "text": "Je nach Nutzung der Website können Daten wie Name, E-Mail-Adresse sowie der Inhalt der Nachricht verarbeitet werden, die der Nutzer über die Kontaktkanäle sendet."
+        },
+        "purposes": {
+          "title": "3. Zwecke der Verarbeitung",
+          "text": "Die Daten werden zu folgenden Zwecken verarbeitet: Verwaltung und Beantwortung von Anfragen, Informationsanfragen, Angeboten oder Mitteilungen des Nutzers sowie gegebenenfalls die Aufrechterhaltung der geschäftlichen oder vorvertraglichen Beziehung."
+        },
+        "legalBasis": {
+          "title": "4. Rechtsgrundlage",
+          "text": "Die Rechtsgrundlage der Verarbeitung kann sein: die Einwilligung des Nutzers beim Senden seiner Daten, die Durchführung vorvertraglicher Maßnahmen auf Anfrage des Nutzers oder das berechtigte Interesse des Verantwortlichen an der Bearbeitung von Anfragen und der Gewährleistung der Sicherheit der Website, je nach Einzelfall."
+        },
+        "retention": {
+          "title": "5. Speicherdauer",
+          "text": "Die Daten werden so lange aufbewahrt, wie es zur Erfüllung des Zwecks erforderlich ist, für den sie erhoben wurden, und anschließend für die durch die anwendbaren gesetzlichen Verpflichtungen vorgeschriebenen Zeiträume."
+        },
+        "recipients": {
+          "title": "6. Empfänger",
+          "text": "Grundsätzlich werden keine Daten an Dritte weitergegeben, außer bei gesetzlicher Verpflichtung oder wenn dies für die Erbringung der Dienstleistung erforderlich ist (z. B. Technologieanbieter). In diesem Fall werden die erforderlichen Vereinbarungen getroffen."
+        },
+        "rights": {
+          "title": "7. Rechte des Nutzers",
+          "textBeforeEmail": "Der Nutzer kann gegebenenfalls die Rechte auf Auskunft, Berichtigung, Löschung, Widerspruch, Einschränkung der Verarbeitung und Datenübertragbarkeit ausüben, indem er an folgende Adresse schreibt:",
+          "textAfterEmail": "."
+        },
+        "security": {
+          "title": "8. Sicherheit",
+          "text": "Es werden angemessene technische und organisatorische Maßnahmen angewendet, um personenbezogene Daten vor unbefugtem Zugriff, Verlust, Veränderung oder Offenlegung zu schützen."
+        }
+      }
+    },
+    "cookiesPolicy": {
+      "title": "Cookie-Richtlinie",
+      "intro": "Diese Cookie-Richtlinie erklärt, was Cookies sind und wie sie auf dieser Website verwendet werden.",
+      "sections": {
+        "whatAreCookies": {
+          "title": "1. Was sind Cookies?",
+          "text": "Cookies sind kleine Textdateien, die im Browser des Nutzers gespeichert werden, wenn er eine Website besucht. Sie dienen unter anderem dazu, die Website funktionsfähig zu machen, Einstellungen zu speichern oder statistische Informationen zu gewinnen."
+        },
+        "cookiesUsed": {
+          "title": "2. Auf dieser Website verwendete Cookies",
+          "text": "Derzeit verwendet diese Website keine eigenen Analyse- oder Werbe-Cookies. Die Website kann ausschließlich technische Cookies verwenden, die für den Betrieb erforderlich sind oder um ein sicheres Nutzungserlebnis zu bieten."
+        },
+        "thirdParty": {
+          "title": "3. Cookies von Dritten",
+          "text": "Diese Website integriert standardmäßig keine Analyse- oder Werbetools von Dritten, die Cookies setzen. Sollten künftig Dienste Dritter mit Cookies eingebunden werden, wird diese Richtlinie aktualisiert."
+        },
+        "disable": {
+          "title": "4. Cookies deaktivieren oder löschen",
+          "text": "Der Nutzer kann Cookies über die Einstellungen seines Browsers zulassen, blockieren oder löschen. Das Deaktivieren bestimmter technischer Cookies kann die Funktionsfähigkeit der Website beeinträchtigen."
+        },
+        "contact": {
+          "title": "5. Kontakt",
+          "textBeforeEmail": "Bei Fragen zu dieser Cookie-Richtlinie können Sie an folgende Adresse schreiben:",
+          "textAfterEmail": "."
+        }
+      }
+    }
   }
 }

@@ -148,7 +148,7 @@ const ServicesSection = () => {
             {visibleServices.map((service, index) => (
               <div
                 key={index}
-                className="bg-white border border-gray-100 p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+                className="bg-white border border-gray-100 p-6 md:p-8 rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300"
               >
                 <h3 className="text-lg md:text-xl font-bold font-panton text-principal mb-3 md:mb-4 border-b-2 border-turquesa10 pb-2 inline-block">
                   {service.title}

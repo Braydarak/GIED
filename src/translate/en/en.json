@@ -175,5 +175,125 @@
     "followUs": "Follow Us",
     "rights": "All rights reserved",
     "developedBy": "Web developed by"
+  },
+  "legalPages": {
+    "legalNotice": {
+      "title": "Legal Notice",
+      "intro": "In compliance with the duty of information established by applicable regulations, the identifying details of the owner of this website are provided below.",
+      "sections": {
+        "owner": {
+          "title": "1. Website ownership",
+          "text": "Identification details of the website owner:",
+          "fields": {
+            "holderLabel": "Owner",
+            "holderValue": "GIED Esports (or the corresponding legal entity).",
+            "idLabel": "Tax ID",
+            "idValue": "[PENDING]",
+            "addressLabel": "Registered address",
+            "addressValue": "[PENDING]",
+            "emailLabel": "Email"
+          }
+        },
+        "purpose": {
+          "title": "2. Purpose",
+          "text": "This Legal Notice regulates access to and use of the website. Access to the website grants the status of user and implies acceptance of the conditions set out herein."
+        },
+        "terms": {
+          "title": "3. Terms of use",
+          "text": "The user undertakes to use the website, its contents and services in accordance with the law, morality, public order and this Legal Notice. Use of the website for unlawful or harmful purposes, or in a way that may cause damage or prevent the normal operation of the website, is prohibited."
+        },
+        "ip": {
+          "title": "4. Intellectual and industrial property",
+          "text": "All website content (including, without limitation, text, images, design, logos, source code and other elements) is protected by intellectual and industrial property rights. Reproduction, distribution or public communication without the express authorization of the owner is prohibited."
+        },
+        "liability": {
+          "title": "5. Liability",
+          "text": "The owner is not responsible for any damages that may arise from the use of the website, nor for the lack of availability or continuity thereof, as well as for possible errors or omissions in the contents."
+        },
+        "thirdPartyLinks": {
+          "title": "6. Third-party links",
+          "text": "If links or hyperlinks to other websites are provided, the owner will not exercise any type of control over such sites and contents. In no case will the owner assume any responsibility for the contents of any link belonging to an external website."
+        },
+        "law": {
+          "title": "7. Applicable law and jurisdiction",
+          "text": "These conditions are governed by Spanish law. In the event of a dispute, the parties will submit to the courts and tribunals that are competent in accordance with the law."
+        }
+      }
+    },
+    "privacyPolicy": {
+      "title": "Privacy Policy",
+      "intro": "This Privacy Policy describes how personal data that the user may provide through this website is processed.",
+      "sections": {
+        "controller": {
+          "title": "1. Data controller",
+          "text": "Contact details of the data controller:",
+          "fields": {
+            "controllerLabel": "Controller",
+            "controllerValue": "GIED Esports (or the corresponding legal entity).",
+            "idLabel": "Tax ID",
+            "idValue": "[PENDING]",
+            "addressLabel": "Address",
+            "addressValue": "[PENDING]",
+            "emailLabel": "Email"
+          }
+        },
+        "dataProcessed": {
+          "title": "2. Personal data that may be processed",
+          "text": "Depending on the use of the website, data such as name, email address and the content of the message sent by the user through the contact channels may be processed."
+        },
+        "purposes": {
+          "title": "3. Purposes of processing",
+          "text": "Data will be processed for the following purposes: managing and responding to inquiries, requests for information, quotes or communications from the user, as well as maintaining the commercial or pre-contractual relationship where applicable."
+        },
+        "legalBasis": {
+          "title": "4. Legal basis",
+          "text": "The legal basis for processing may be: the user's consent when sending their data, the application of pre-contractual measures at the user's request, or the controller's legitimate interest in handling requests and ensuring website security, as appropriate in each case."
+        },
+        "retention": {
+          "title": "5. Data retention",
+          "text": "Data will be kept for as long as necessary to fulfill the purpose for which it was collected and, thereafter, for the periods required by applicable legal obligations."
+        },
+        "recipients": {
+          "title": "6. Recipients",
+          "text": "As a general rule, data will not be disclosed to third parties, except where required by law or where necessary for the provision of the service (for example, technology providers), in which case the necessary agreements will be entered into."
+        },
+        "rights": {
+          "title": "7. User rights",
+          "textBeforeEmail": "The user may exercise the rights of access, rectification, erasure, objection, restriction of processing and portability, where applicable, by writing to",
+          "textAfterEmail": "."
+        },
+        "security": {
+          "title": "8. Security",
+          "text": "Reasonable technical and organizational measures are applied to protect personal data against unauthorized access, loss, alteration or disclosure."
+        }
+      }
+    },
+    "cookiesPolicy": {
+      "title": "Cookies Policy",
+      "intro": "This Cookies Policy explains what cookies are and how they are used on this website.",
+      "sections": {
+        "whatAreCookies": {
+          "title": "1. What are cookies?",
+          "text": "Cookies are small text files stored in the user's browser when visiting a website. They are used to make the website work, remember preferences or obtain statistical information, among other purposes."
+        },
+        "cookiesUsed": {
+          "title": "2. Cookies used on this website",
+          "text": "Currently, this website does not use its own analytics or advertising cookies. The site may only use technical cookies necessary for its operation or to provide a secure experience."
+        },
+        "thirdParty": {
+          "title": "3. Third-party cookies",
+          "text": "This website does not, by default, integrate third-party analytics or advertising tools that install cookies. If in the future third-party services that use cookies are incorporated, this policy will be updated."
+        },
+        "disable": {
+          "title": "4. How to disable or delete cookies",
+          "text": "The user can allow, block or delete cookies through their browser settings. Disabling certain technical cookies could affect the operation of the website."
+        },
+        "contact": {
+          "title": "5. Contact",
+          "textBeforeEmail": "For any questions related to this Cookies Policy, you can write to",
+          "textAfterEmail": "."
+        }
+      }
+    }
   }
 }

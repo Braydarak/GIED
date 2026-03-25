@@ -149,7 +149,7 @@ const AboutUsSection = () => {
 
             <div className="grid grid-cols-2 lg:grid-cols-1 gap-6">
               {/* 2021 */}
-              <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center hover:-translate-y-1 transition-transform duration-300">
+              <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center hover:shadow-md transition-shadow duration-300">
                 <div className="text-turquesa80 mb-2 flex justify-center">
                   <FaCalendarAlt size={24} />
                 </div>
@@ -162,7 +162,7 @@ const AboutUsSection = () => {
               </div>
 
               {/* 100% */}
-              <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center hover:-translate-y-1 transition-transform duration-300">
+              <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center hover:shadow-md transition-shadow duration-300">
                 <div className="text-turquesa80 mb-2 flex justify-center">
                   <FaPercentage size={24} />
                 </div>

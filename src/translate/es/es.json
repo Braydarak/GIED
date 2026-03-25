@@ -175,5 +175,125 @@
     "followUs": "Síguenos",
     "rights": "Todos los derechos reservados",
     "developedBy": "Web desarrollada por"
+  },
+  "legalPages": {
+    "legalNotice": {
+      "title": "Aviso Legal",
+      "intro": "En cumplimiento con el deber de información establecido en la normativa aplicable, a continuación se facilitan los datos identificativos del titular de este sitio web.",
+      "sections": {
+        "owner": {
+          "title": "1. Titularidad del sitio web",
+          "text": "Datos identificativos del titular del sitio web:",
+          "fields": {
+            "holderLabel": "Titular",
+            "holderValue": "GIED Esports (o la razón social correspondiente).",
+            "idLabel": "NIF/CIF",
+            "idValue": "[PENDIENTE]",
+            "addressLabel": "Domicilio social",
+            "addressValue": "[PENDIENTE]",
+            "emailLabel": "Correo electrónico"
+          }
+        },
+        "purpose": {
+          "title": "2. Objeto",
+          "text": "El presente Aviso Legal regula el acceso y el uso del sitio web. El acceso al sitio web atribuye la condición de usuario e implica la aceptación de las condiciones aquí reflejadas."
+        },
+        "terms": {
+          "title": "3. Condiciones de uso",
+          "text": "El usuario se compromete a utilizar el sitio web, sus contenidos y servicios de conformidad con la ley, la moral, el orden público y el presente Aviso Legal. Queda prohibido el uso del sitio web con fines ilícitos o lesivos, o que puedan causar perjuicio o impedir el normal funcionamiento del sitio web."
+        },
+        "ip": {
+          "title": "4. Propiedad intelectual e industrial",
+          "text": "Todos los contenidos del sitio web (incluyendo, sin limitación, textos, imágenes, diseño, logotipos, código fuente y demás elementos) están protegidos por derechos de propiedad intelectual e industrial. Queda prohibida su reproducción, distribución o comunicación pública sin autorización expresa del titular."
+        },
+        "liability": {
+          "title": "5. Responsabilidad",
+          "text": "El titular no se responsabiliza de los daños y perjuicios que pudieran derivarse del uso del sitio web, ni de la falta de disponibilidad o continuidad del mismo, así como de posibles errores u omisiones en los contenidos."
+        },
+        "thirdPartyLinks": {
+          "title": "6. Enlaces a terceros",
+          "text": "En caso de que se dispongan enlaces o hipervínculos hacia otros sitios de Internet, el titular no ejercerá ningún tipo de control sobre dichos sitios y contenidos. En ningún caso asumirá responsabilidad alguna por los contenidos de algún enlace perteneciente a un sitio web ajeno."
+        },
+        "law": {
+          "title": "7. Legislación aplicable y jurisdicción",
+          "text": "Las presentes condiciones se rigen por la legislación española. En caso de controversia, las partes se someterán a los juzgados y tribunales que resulten competentes conforme a derecho."
+        }
+      }
+    },
+    "privacyPolicy": {
+      "title": "Política de Privacidad",
+      "intro": "Esta Política de Privacidad describe cómo se tratan los datos personales que el usuario pueda facilitar a través de este sitio web.",
+      "sections": {
+        "controller": {
+          "title": "1. Responsable del tratamiento",
+          "text": "Datos de contacto del responsable del tratamiento:",
+          "fields": {
+            "controllerLabel": "Responsable",
+            "controllerValue": "GIED Esports (o la razón social correspondiente).",
+            "idLabel": "NIF/CIF",
+            "idValue": "[PENDIENTE]",
+            "addressLabel": "Dirección",
+            "addressValue": "[PENDIENTE]",
+            "emailLabel": "Correo electrónico"
+          }
+        },
+        "dataProcessed": {
+          "title": "2. Datos personales que se pueden tratar",
+          "text": "En función del uso del sitio web, se pueden tratar datos como: nombre, correo electrónico y el contenido del mensaje que el usuario remita mediante los canales de contacto."
+        },
+        "purposes": {
+          "title": "3. Finalidades del tratamiento",
+          "text": "Los datos se tratarán con las siguientes finalidades: gestionar y responder consultas, solicitudes de información, presupuestos o comunicaciones del usuario, así como mantener la relación comercial o precomercial cuando proceda."
+        },
+        "legalBasis": {
+          "title": "4. Base jurídica",
+          "text": "La base jurídica del tratamiento puede ser: el consentimiento del usuario al enviar sus datos, la aplicación de medidas precontractuales a petición del usuario, o el interés legítimo del responsable en atender solicitudes y garantizar la seguridad del sitio web, según corresponda en cada caso."
+        },
+        "retention": {
+          "title": "5. Conservación de los datos",
+          "text": "Los datos se conservarán durante el tiempo necesario para cumplir con la finalidad para la que se recabaron y, posteriormente, por los plazos exigidos por las obligaciones legales aplicables."
+        },
+        "recipients": {
+          "title": "6. Destinatarios",
+          "text": "Con carácter general, no se cederán datos a terceros, salvo obligación legal o cuando sea necesario para la prestación del servicio (por ejemplo, proveedores tecnológicos), en cuyo caso se suscribirán los acuerdos necesarios."
+        },
+        "rights": {
+          "title": "7. Derechos del usuario",
+          "textBeforeEmail": "El usuario puede ejercer los derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad, cuando proceda, escribiendo a",
+          "textAfterEmail": "."
+        },
+        "security": {
+          "title": "8. Seguridad",
+          "text": "Se aplican medidas técnicas y organizativas razonables para proteger los datos personales frente a accesos no autorizados, pérdida, alteración o divulgación."
+        }
+      }
+    },
+    "cookiesPolicy": {
+      "title": "Política de Cookies",
+      "intro": "Esta Política de Cookies explica qué son las cookies y cómo se usan en este sitio web.",
+      "sections": {
+        "whatAreCookies": {
+          "title": "1. ¿Qué son las cookies?",
+          "text": "Las cookies son pequeños archivos de texto que se almacenan en el navegador del usuario cuando visita un sitio web. Sirven para que el sitio web funcione, para recordar preferencias o para obtener información estadística, entre otros fines."
+        },
+        "cookiesUsed": {
+          "title": "2. Cookies utilizadas en este sitio web",
+          "text": "Actualmente, este sitio web no utiliza cookies analíticas ni publicitarias propias. El sitio puede utilizar únicamente cookies técnicas necesarias para su funcionamiento o para ofrecer una experiencia segura."
+        },
+        "thirdParty": {
+          "title": "3. Cookies de terceros",
+          "text": "Este sitio web no integra, de forma predeterminada, herramientas de analítica o publicidad de terceros que instalen cookies. Si en el futuro se incorporan servicios de terceros que utilicen cookies, esta política se actualizará."
+        },
+        "disable": {
+          "title": "4. Cómo deshabilitar o eliminar cookies",
+          "text": "El usuario puede permitir, bloquear o eliminar cookies mediante la configuración de su navegador. La desactivación de ciertas cookies técnicas podría afectar al funcionamiento del sitio web."
+        },
+        "contact": {
+          "title": "5. Contacto",
+          "textBeforeEmail": "Para cualquier duda relacionada con esta Política de Cookies, puede escribir a",
+          "textAfterEmail": "."
+        }
+      }
+    }
   }
 }

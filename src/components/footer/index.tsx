@@ -1,5 +1,6 @@
 import GiedLogo from "../../assets/images/LOGOTIPO GIED VERSION 2.webp";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import {
   FaInstagram,
   FaEnvelope,
@@ -65,19 +66,28 @@ const Footer = () => {
             </h3>
             <ul className="space-y-3 text-sm text-gray-600">
               <li>
-                <a href="#" className="hover:text-principal transition-colors">
+                <Link
+                  to="/aviso-legal"
+                  className="hover:text-principal transition-colors"
+                >
                   {t("footer.legal.links.notice")}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-principal transition-colors">
+                <Link
+                  to="/politica-de-privacidad"
+                  className="hover:text-principal transition-colors"
+                >
                   {t("footer.legal.links.privacy")}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-principal transition-colors">
+                <Link
+                  to="/politica-de-cookies"
+                  className="hover:text-principal transition-colors"
+                >
                   {t("footer.legal.links.cookies")}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
