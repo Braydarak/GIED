@@ -99,7 +99,7 @@ const Footer = () => {
             </h3>
             <div className="flex gap-4">
               <a
-                href="https://www.instagram.com/gied.eventos/"
+                href="https://www.instagram.com/gied.esports/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-principal hover:bg-principal hover:text-white transition-all duration-300"
